@@ -72,7 +72,7 @@ export default function ContactUs() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder=""
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 text-sm sm:text-base"
                     required
                   />
@@ -87,7 +87,7 @@ export default function ContactUs() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder=""
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 text-sm sm:text-base"
                     required
                   />
@@ -103,8 +103,8 @@ export default function ContactUs() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+1 (555) 000-0000"
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 text-sm sm:text-base"
+                  placeholder=""
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 text-sm sm:text-black"
                 />
               </div>
 
@@ -118,7 +118,7 @@ export default function ContactUs() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell us about your project, goals, and timeline..."
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 resize-none text-sm sm:text-base"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 resize-none text-sm sm:text-black"
                   required
                 ></textarea>
               </div>
@@ -163,7 +163,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-medium">PHONE</p>
-                  <p className="text-gray-900 font-semibold text-sm sm:text-base">+1 (555) 123-4567</p>
+                  <p className="text-gray-900 font-semibold text-sm sm:text-base">+91 9567435550<br></br>+91 8848792898</p>
                 </div>
               </div>
 
@@ -173,7 +173,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-medium">EMAIL</p>
-                  <p className="text-gray-900 font-semibold text-sm sm:text-base break-all">info@thinkverse.com</p>
+                  <p className="text-gray-900 font-semibold text-sm sm:text-base break-all">thinkverse.mail@gmail.com</p>
                 </div>
               </div>
 
@@ -183,7 +183,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-medium">OFFICE</p>
-                  <p className="text-gray-900 font-semibold text-xs sm:text-sm">123 Business Street<br />New York, NY 10001</p>
+                  <p className="text-gray-900 font-semibold text-xs sm:text-sm"><br />Kerala,India</p>
                 </div>
               </div>
             </div>

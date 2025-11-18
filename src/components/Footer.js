@@ -38,20 +38,7 @@ export default function Footer() {
 
                     {/* Social Icons */}
                     <div className="flex gap-2 sm:gap-3">
-                        <a href="#behance" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M6.5 4.5h4.8c3.4 0 5.2 1.7 5.2 4.6 0 2.1-1 3.6-2.8 4.2 2.3.5 3.3 2.3 3.3 4.7 0 3.4-2.1 5.5-5.9 5.5H6.5V4.5zm3.8 7.5h1.2c1.5 0 2.4-.8 2.4-2.2s-.9-2.1-2.4-2.1h-1.2v4.3zm0 8.4h1.5c1.7 0 2.7-.9 2.7-2.5s-1-2.4-2.7-2.4h-1.5v4.9zm8.9-12.9h5v1.5h-5V7.5z" />
-                            </svg>
-                        </a>
-                        <a href="#instagram" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
-                        </a>
-                        <a href="#instagram2" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
-                        </a>
-                        <a href="#facebook" className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
-                        </a>
+                        
                     </div>
                 </div>
                 
