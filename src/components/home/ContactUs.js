@@ -10,43 +10,52 @@ export default function ContactUs() {
     message: ''
   });
   const [isVisible, setIsVisible] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => entry.isIntersecting && setIsVisible(true),
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    sectionRef.current && observer.observe(sectionRef.current);
+    return () => sectionRef.current && observer.unobserve(sectionRef.current);
   }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (isSending) return;
+
+    setIsSending(true);
+
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert('Message sent successfully! We\'ll get back to you soon');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (err) {
+      alert('Network error. Please check your connection.');
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
     <section ref={sectionRef} className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
         <div className={`text-center mb-10 sm:mb-12 lg:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">Let's Build Something Amazing</h2>
@@ -56,84 +65,54 @@ export default function ContactUs() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
-          {/* Contact Form - Takes 2 columns */}
+
+          {/* Contact Form */}
           <div className={`lg:col-span-2 bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 border border-gray-200 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900">Send us a message</h3>
             <p className="text-gray-500 mb-6 sm:mb-8 text-sm sm:text-base">Fill out the form below and we'll be in touch soon.</p>
-            
-            <div className="space-y-5 sm:space-y-6">
+
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                <div className="transform transition-all duration-300 hover:scale-[1.02]">
-                  <label className="block text-gray-700 font-medium mb-2 text-sm">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder=""
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 text-sm sm:text-base"
-                    required
-                  />
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2 text-sm">Full Name *</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} required
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm sm:text-base"
+                    placeholder="John Doe" />
                 </div>
-                
-                <div className="transform transition-all duration-300 hover:scale-[1.02]">
-                  <label className="block text-gray-700 font-medium mb-2 text-sm">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder=""
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 text-sm sm:text-base"
-                    required
-                  />
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2 text-sm">Email Address *</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} required
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm sm:text-base"
+                    placeholder="john@example.com" />
                 </div>
               </div>
 
-              <div className="transform transition-all duration-300 hover:scale-[1.02]">
-                <label className="block text-gray-700 font-medium mb-2 text-sm">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder=""
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 text-sm sm:text-black"
-                />
+              <div>
+                <label className="block text-gray-700 font-medium mb-2 text-sm">Phone Number</label>
+                <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm sm:text-base"
+                  placeholder="+91 98765 43210" />
               </div>
 
-              <div className="transform transition-all duration-300 hover:scale-[1.02]">
-                <label className="block text-gray-700 font-medium mb-2 text-sm">
-                  Your Message *
-                </label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your project, goals, and timeline..."
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all duration-300 resize-none text-sm sm:text-black"
-                  required
-                ></textarea>
+              <div>
+                <label className="block text-gray-700 font-medium mb-2 text-sm">Your Message *</label>
+                <textarea name="message" rows={5} value={formData.message} onChange={handleChange} required
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 resize-none text-sm sm:text-base"
+                  placeholder="Tell us about your project, goals, and timeline..."></textarea>
               </div>
 
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] inline-flex items-center justify-center gap-2 sm:gap-3 group text-sm sm:text-base"
-              >
-                <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                Send Message
-              </button>
-            </div>
+             <button
+  type="submit"
+  disabled={isSending}
+  className="mx-auto mt-5 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm py-2.5 px-6 rounded-full flex items-center justify-center gap-1.5 transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-70"
+>
+  <Send className="w-3.5 h-3.5" />
+  {isSending ? 'Sending' : 'Send Message'}
+</button>
+            </form>
           </div>
 
-          {/* Contact Information Sidebar */}
+                   {/* Contact Information Sidebar */}
           <div className={`space-y-5 sm:space-y-6 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             {/* Quick Contact Card */}
             <div className="bg-blue-500 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
@@ -141,7 +120,7 @@ export default function ContactUs() {
               <p className="text-white/90 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                 We're here to help and answer any question you might have. We look forward to hearing from you!
               </p>
-              
+
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
                   <div className="bg-white/20 rounded-lg p-2 flex-shrink-0">

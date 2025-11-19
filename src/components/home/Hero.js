@@ -61,10 +61,10 @@ export default function Hero() {
           custom software, cloud, and cybersecurity services.
         </p>
 
-        <button className="button-hover bg-blue-600 text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition shadow-lg inline-flex items-center gap-2 mb-4 sm:mb-2 text-sm sm:text-base">
+        {/* <button className="button-hover bg-blue-600 text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition shadow-lg inline-flex items-center gap-2 mb-4 sm:mb-2 text-sm sm:text-base">
           <span>Start a Project</span>
           <span className="arrow">→</span>
-        </button>
+        </button> */}
 
         {/* Laptop Image Section */}
         <div className="mt-4 sm:mt-0 sm:-mt-12 md:-mt-16 lg:-mt-[90px] mb-0 sm:-mb-20 md:-mb-32 lg:-mb-[150px] flex justify-center px-4">
