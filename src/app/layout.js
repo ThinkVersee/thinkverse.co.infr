@@ -26,14 +26,6 @@ export const metadata = {
     "ThinkVerse",
     "technology consulting",
   ],
-  openGraph: {
-    title: "ThinkVerse – Software Development & IT Services",
-    description:
-      "Build scalable software, web apps, and digital solutions with ThinkVerse.",
-    url: "https://thinkverse.co.in",
-    siteName: "ThinkVerse",
-    type: "website",
-  },
   icons: {
     icon: [
       {
@@ -41,8 +33,7 @@ export const metadata = {
           "data:image/svg+xml;utf8," +
           encodeURIComponent(`
             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-              <rect width='100' height='100' rx='20' fill='#7C3AED'/>
-              <text x='50%' y='58%' text-anchor='middle' font-size='55' font-family='Arial' fill='#ffffff'>t</text>
+              <text x='50%' y='60%' text-anchor='middle' font-size='70' font-family='Arial' fill='#7C3AED'>t</text>
             </svg>
           `),
         type: "image/svg+xml",
