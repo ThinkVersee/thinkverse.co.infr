@@ -63,12 +63,12 @@ export default function ContactUs() {
             Ready to turn your vision into reality? Drop us a message and our team will get back to you within 24 hours.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+ 
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-8">
 
           {/* Contact Form */}
-          <div className={`lg:col-span-2 bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8 lg:p-12 border border-gray-200 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900">Send us a message</h3>
+          <div className={`lg:col-span-2 bg-white rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 lg:p-10 border border-gray-200 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            <h3 className="text-2xl sm:text-3xl font-bold   text-gray-900">Send us a message</h3>
             <p className="text-gray-500 mb-6 sm:mb-8 text-sm sm:text-base">Fill out the form below and we'll be in touch soon.</p>
 
             <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
@@ -101,25 +101,28 @@ export default function ContactUs() {
                   placeholder="Tell us about your project, goals, and timeline..."></textarea>
               </div>
 
-             <button
-  type="submit"
-  disabled={isSending}
-  className="mx-auto mt-5 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm py-2.5 px-6 rounded-full flex items-center justify-center gap-1.5 transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-70"
->
-  <Send className="w-3.5 h-3.5" />
-  {isSending ? 'Sending' : 'Send Message'}
-</button>
+              <button
+                type="submit"
+                disabled={isSending}
+                className="mx-auto mt-5 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm py-2.5 px-6 rounded-full flex items-center justify-center gap-1.5 transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-70"
+              >
+                <Send className="w-3.5 h-3.5" />
+                {isSending ? 'Sending' : 'Send Message'}
+              </button>
             </form>
           </div>
 
-                   {/* Contact Information Sidebar */}
-          <div className={`space-y-5 sm:space-y-6 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+          {/* Contact Information Sidebar */}
+          <div className={`space-y-8 sm:space-y-8
+ transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             {/* Quick Contact Card */}
             <div className="bg-blue-500 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
               <h4 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Get in Touch</h4>
               <p className="text-white/90 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                 We're here to help and answer any question you might have. We look forward to hearing from you!
+                Our team is dedicated to providing quick and friendly support, so feel free to reach out anytime.
               </p>
+
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-3 transform transition-all duration-300 hover:translate-x-2">
@@ -160,31 +163,17 @@ export default function ContactUs() {
                 <div className="bg-teal-600 rounded-xl w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 transition-all duration-300">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
+
                 <div>
                   <p className="text-xs text-gray-500 font-medium">OFFICE</p>
-                  <p className="text-gray-900 font-semibold text-xs sm:text-sm"><br />Kerala,India</p>
+                  <p className="text-gray-900 font-semibold text-sm sm:text-base break-all">Kottakkal</p>
+                  <p className="text-gray-900 font-semibold text-sm sm:text-base break-all">Kerala, India</p>
                 </div>
               </div>
+
             </div>
 
-            {/* Business Hours */}
-            <div className="bg-black rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-white transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
-              <h5 className="font-bold mb-3 text-base sm:text-lg">Business Hours</h5>
-              <div className="space-y-2 text-xs sm:text-sm">
-                <div className="flex justify-between transition-all duration-300 hover:translate-x-2">
-                  <span className="text-gray-400">Monday - Friday</span>
-                  <span className="font-semibold">9am - 6pm EST</span>
-                </div>
-                <div className="flex justify-between transition-all duration-300 hover:translate-x-2">
-                  <span className="text-gray-400">Saturday</span>
-                  <span className="font-semibold">10am - 4pm EST</span>
-                </div>
-                <div className="flex justify-between transition-all duration-300 hover:translate-x-2">
-                  <span className="text-gray-400">Sunday</span>
-                  <span className="font-semibold">Closed</span>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
