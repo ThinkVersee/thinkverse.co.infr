@@ -42,18 +42,18 @@ export default function Portfolio() {
         : projects.filter(p => p.category === selectedCategory);
 
     return (
-        <section ref={sectionRef} className="py-20 lg:py-32 bg-slate-950 relative overflow-hidden">
+        <section ref={sectionRef} className="py-20 lg:py-32 bg-blue-950 relative overflow-hidden">
             {/* Subtle Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-black opacity-90" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#d9cfae] via-[#adc8ec] to-[#6aa7e0]" />
 
-            <div className="pt-8 max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div className=" max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                 {/* Header */}
-                <div className="text-center pt-8">
+                <div className="text-center ">
                     {/* Small Badge */}
                     <div className={`inline-flex items-center gap-3 mb-9 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
                         }`}>
-                        <Sparkles className="pt-8  text-blue-400" />
-                        <span className="pt-8 text-2xl font-semibold tracking-wider text-blue-600 uppercase">
+                 
+                        <span className=" text-2xl font-semibold tracking-wider text-blue-600 uppercase">
                             Our Works
                         </span>
                     </div>
@@ -61,7 +61,7 @@ export default function Portfolio() {
 
 
                     {/* Subtitle */}
-                    <p className=" text-gray-400 mb-10 text-lg max-w-3xl mx-auto leading-relaxed">
+                    <p className=" text-black mb-10 text-lg max-w-3xl mx-auto leading-relaxed">
                         Showcasing thoughtfully crafted digital solutions that blend creativity, innovation, and real-world impact.
                     </p>
 
@@ -73,9 +73,9 @@ export default function Portfolio() {
                         <button
                             key={category}
                             onClick={() => setSelectedCategory(category)}
-                            className={`px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 backdrop-blur-xl border ${selectedCategory === category
+                            className={`px-6 py-3 rounded-full font-medium text-sm transition-all duration-300   border ${selectedCategory === category
                                     ? 'bg-white text-black border-white shadow-2xl shadow-white/40'
-                                    : 'bg-white/10 text-gray-300 border-white/10 hover:bg-white/20 hover:text-white hover:border-white/30'
+                                    : 'bg-white text-black border-white/10 hover:bg-white hover:text-blue-500 hover:border-blue/30'
                                 }`}
                         >
                             {category}
@@ -88,7 +88,7 @@ export default function Portfolio() {
                     {filteredProjects.map((project, index) => (
                         <div
                             key={project.id}
-                            className={`group relative bg-white/5 backdrop-blur-2xl rounded-3xl overflow-hidden border border-white/10 transition-all duration-700 hover:border-white/30 hover:bg-white/10 hover:shadow-2xl hover:shadow-blue-500/20 flex flex-col h-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+                            className={`group relative bg-white   rounded-3xl overflow-hidden border border-white/10 transition-all duration-700 hover:border-white/30 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/20 flex flex-col h-full ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
                                 }`}
                             style={{ transitionDelay: `${index * 150 + 500}ms` }}
                         >
