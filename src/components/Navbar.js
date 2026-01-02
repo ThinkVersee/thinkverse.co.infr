@@ -54,10 +54,15 @@ export default function Navbar() {
                 onClick={() => handleNavClick(item)}
                 className="capitalize text-gray-700 hover:text-blue-600 font-medium"
               >
-                {item === "home" ? "Home" : item}
+                {label}
+                <span
+                  id={`dot-${id}`}
+                  className="nav-dot absolute -left-6 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-cyan-400 rounded-full opacity-0 transition-opacity duration-300"
+                />
               </button>
-            ))}
-          </div>
+            );
+          })}
+        </div>
 
           {/* MOBILE BUTTON */}
           <button
