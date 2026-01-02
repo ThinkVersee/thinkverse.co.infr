@@ -1,84 +1,66 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import laptopImg from '../../../public/common/Frame 2147225212.png';
 
-export default function Hero() {
+export default function ThinkVerseHero() {
+  const scrollToPortfolio = () => {
+    document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#d9cfae] via-[#adc8ec] to-[#6aa7e0] pt-16 sm:pt-24">
-      <style jsx>{`
-        @keyframes slideRight {
-          from {
-            transform: translateX(-5px);
-          }
-          to {
-            transform: translateX(0);
-          }
-        }
+    <section className="relative bg-black min-h-screen text-white overflow-hidden">
+      {/* Your existing decorative elements */}
+      <div className="absolute top-32 left-20 w-40 h-40 border-2 border-gray-800/50 rounded-tl-[120px]" />
+      <div className="absolute top-40 right-24 w-36 h-36 border-2 border-gray-800/50 rounded-full" />
 
-        .button-hover:hover .arrow {
-          animation: slideRight 0.3s ease-in-out infinite;
-        }
-
-        .button-hover {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .button-hover::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.2);
-          transform: translate(-50%, -50%);
-          transition: width 0.6s, height 0.6s;
-        }
-
-        .button-hover:hover::before {
-          width: 300px;
-          height: 300px;
-        }
-
-        .button-hover span {
-          position: relative;
-          z-index: 1;
-        }
-      `}</style>
-
-      {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20 pb-8 sm:pb-12 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
-          Empowering <span className="text-blue-600">Innovation with Scalable</span> IT Solutions
-        </h1>
-
-        <p className="text-white text-base sm:text-lg mb-6 max-w-3xl mx-auto px-4">
-          We help startups and enterprises accelerate digital transformation with
-          custom software, cloud, and cybersecurity services.
-        </p>
-
-        {/* <button className="button-hover bg-blue-600 text-white px-6 sm:px-7 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition shadow-lg inline-flex items-center gap-2 mb-4 sm:mb-2 text-sm sm:text-base">
-          <span>Start a Project</span>
-          <span className="arrow">→</span>
-        </button> */}
-
-        {/* Laptop Image Section */}
-        <div className="mt-4 sm:mt-0 sm:-mt-12 md:-mt-16 lg:-mt-[90px] mb-0 sm:-mb-20 md:-mb-32 lg:-mb-[150px] flex justify-center px-4">
-          <div className="w-full max-w-5xl">
-            <Image
-              src={laptopImg}
-              alt="Laptop mockup showing our services"
-              className="w-full h-auto"
-              priority
-            />
-          </div>
+      <div className="relative w-full min-h-screen">
+        {/* Hero Text */}
+        <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ top: '169px', width: '1170px', maxWidth: '95%' }}>
+          <h1 style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 500, fontSize: '64px', lineHeight: '100%', color: '#ffffff', margin: 0 }}>
+            Think Beyond the Interface
+          </h1>
+          <p style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 500, fontSize: '64px', lineHeight: '100%', color: '#10b981', margin: '8px 0 0 0' }}>
+            We design &amp; build digital products that live in the future.
+          </p>
         </div>
 
+        {/* Accent bars */}
+        <div className="absolute flex gap-3" style={{ top: '490px', left: '80px' }}>
+          <div className="w-20 h-1.5 bg-yellow-400" />
+          <div className="w-10 h-1.5 bg-emerald-400" />
+        </div>
+
+        {/* Description */}
+        <div className="absolute" style={{ top: '520px', left: '80px', width: '435px' }}>
+          <p style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 400, fontSize: '20px', lineHeight: '30px', color: '#d1d5db' }}>
+            Thinkverse is a design-driven digital studio focused on creating meaningful, scalable, and high-performing digital experiences.
+          </p>
+        </div>
+
+        {/* View Portfolio Button - Now Clickable! */}
+        <div className="absolute" style={{ top: '620px', left: '80px' }}>
+          <button
+            onClick={scrollToPortfolio}
+            className="group border-2 border-blue-600 text-white px-8 py-3.5 rounded-full hover:bg-blue-600/10 transition-all duration-300 flex items-center gap-2.5 cursor-pointer"
+          >
+            <span style={{ fontFamily: 'Halenoir, sans-serif', fontSize: '16px', fontWeight: 500 }}>
+              View Portfolio
+            </span>
+            <span className="group-hover:translate-x-2 transition-transform duration-300 text-lg">
+              →
+            </span>
+          </button>
+        </div>
+
+        {/* Phone Mockup */}
+        <div className="absolute pointer-events-none" style={{ width: '1072px', height: '804px', top: '180px', left: '483px' }}>
+          <img
+            src="/common/iPhone 16.png"
+            alt="ThinkVerse mobile mockup"
+            className="w-full h-full object-contain drop-shadow-2xl"
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

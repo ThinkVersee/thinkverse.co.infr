@@ -9,7 +9,7 @@ const projectData = {
         title: 'Cinema Casting Company',
         category: 'Web Application Development',
         overview: 'Talent Meets Opportunity – A modern social media and casting platform connecting actors, directors, production houses, and casting teams, with a strong focus on Malayalam cinema, short films, reels, and digital media.',
-         heroImage: '/cinema-1.png',
+        heroImage: '/cinema-1.png',
         features: [
             'Social feed with posts, likes, comments, photos & videos',
             'Advanced role search with filters (location, salary, experience, employment type)',
@@ -52,17 +52,28 @@ export default function ProjectDetail({ slug }) {
     const project = projectData[slug];
 
     if (!project) return notFound();
+
+    const isDevelopmentProject = 
+        project.category === 'Web Application Development' || 
+        project.category === 'Website Development';
+
     return (
-        <section className="min-h-screen bg-gradient-to-b from-[#d9cfae] via-[#adc8ec] to-[#6aa7e0] text-white py-20 lg:py-32">
+        <section className="min-h-screen bg-white text-gray-900 py-20 lg:py-32">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <Link href="/#portfolio" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mb-12 transition-colors">
+                <Link href="/#portfolio" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-12 transition-colors">
                     <ArrowLeft className="w-5 h-5" /> Back to Portfolio
                 </Link>
 
                 <div className="text-center mb-20">
                     <h1 className="text-4xl lg:text-6xl font-bold mb-6">{project.title}</h1>
                     <p className="text-xl lg:text-2xl text-black max-w-4xl mx-auto mb-8">{project.overview}</p>
-                    <span className="inline-block px-6 py-3 bg-blue-600 rounded-full text-lg font-semibold">{project.category}</span>
+                    
+                    {/* Green badge with white text for both development categories */}
+                    <span className={`inline-block px-6 py-3 rounded-full text-lg font-semibold text-white ${
+                        isDevelopmentProject ? 'bg-green-600' : 'bg-gray-600'
+                    }`}>
+                        {project.category}
+                    </span>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-center mb-32">
@@ -71,7 +82,8 @@ export default function ProjectDetail({ slug }) {
                         <ul className="space-y-4 text-lg">
                             {project.features.map((feature, i) => (
                                 <li key={i} className="flex items-start gap-3">
-                                    <span className="text-blue-400">✓</span> {feature}
+                                    <span className={isDevelopmentProject ? 'text-green-500' : 'text-gray-500'}>✓</span> 
+                                    {feature}
                                 </li>
                             ))}
                         </ul>
@@ -88,7 +100,7 @@ export default function ProjectDetail({ slug }) {
                     {slug === 'cinema-casting-company' && (
                         <>
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="/cinema-2.png" />
+                                <img src="/cinema-2.png" alt="Gallery 1" className="w-full h-auto object-cover" />
                             </div>
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
                                 <img src="/cinema-3.png" alt="Casting Profile" className="w-full h-auto object-cover" />
@@ -132,7 +144,9 @@ export default function ProjectDetail({ slug }) {
 
                 <div className="text-center mt-20">
                     <h3 className="text-2xl font-semibold mb-6">Want something similar built for you?</h3>
-                    <Link href="/#contact" className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full text-lg font-medium transition-colors">
+                    
+                    {/* Green "Get in Touch" button with white text */}
+                    <Link href="/#contact" className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 rounded-full text-lg font-medium text-white transition-colors shadow-lg">
                         Get in Touch
                     </Link>
                 </div>
