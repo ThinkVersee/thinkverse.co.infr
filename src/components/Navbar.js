@@ -4,45 +4,66 @@ import React, { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
 export default function ThinkVerseNavbar() {
-  const [activeLink, setActiveLink] = useState('Home');
   const router = useRouter();
   const pathname = usePathname();
+
+  const [activeLink, setActiveLink] = useState('Home');
 
   const navLinks = [
     { name: 'Home', href: '/', id: 'home' },
     { name: 'Services', href: '/', id: 'services' },
     { name: 'About Us', href: '/', id: 'about' },
-    { name: 'Portfolio', href: 'portfolio'  }, // No id → goes to separate page
+    { name: 'Portfolio', href: '/portfolio' }, // ✅ FIXED
   ];
 
-  // Only track scroll on homepage
+  /**
+   * ✅ SET ACTIVE LINK BASED ON ROUTE
+   */
+  useEffect(() => {
+    if (pathname === '/') {
+      setActiveLink('Home');
+    } else if (pathname === '/portfolio') {
+      setActiveLink('Portfolio');
+    }
+  }, [pathname]);
+
+  /**
+   * ✅ SCROLL TRACKING ONLY FOR HOME PAGE
+   */
   useEffect(() => {
     if (pathname !== '/') return;
 
+    const sections = ['home', 'services', 'about', 'contact'];
+
     const handleScroll = () => {
-      const sections = ['home', 'services', 'about', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
         if (section && section.offsetTop <= scrollPosition) {
           const link = navLinks.find(l => l.id === sections[i]);
-          if (link) setActiveLink(link.name);
+          if (link) {
+            setActiveLink(link.name);
+          }
           break;
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
 
+  /**
+   * ✅ NAV CLICK HANDLER
+   */
   const handleNavClick = (link) => {
-    if (link.href.startsWith('/') && link.href !== '/works') {
-      // Same page scroll
+    if (link.href === '/') {
+      // Scroll-based navigation
       if (pathname !== '/') {
-        router.push(link.href);
+        router.push('/');
         setTimeout(() => {
           document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
         }, 300);
@@ -51,18 +72,20 @@ export default function ThinkVerseNavbar() {
       }
       setActiveLink(link.name);
     } else {
-      // Navigate to /works
+      // Page navigation (Portfolio)
       router.push(link.href);
+      setActiveLink(link.name);
     }
   };
 
+  /**
+   * ✅ LOGO CLICK
+   */
   const handleLogoClick = () => {
     router.push('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveLink('Home');
   };
-
-  // Determine active state (highlight Works when on /works)
-  const currentActive = pathname === '/works' ? 'Works' : activeLink;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black text-white px-8 py-6 flex items-center justify-between">
@@ -83,12 +106,12 @@ export default function ThinkVerseNavbar() {
             key={link.name}
             onClick={() => handleNavClick(link)}
             className={`px-6 py-2 rounded-full transition-all duration-300 text-sm flex items-center gap-2 ${
-              currentActive === link.name
+              activeLink === link.name
                 ? 'text-blue-400'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
-            {currentActive === link.name && (
+            {activeLink === link.name && (
               <span className="inline-block w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
             )}
             {link.name}

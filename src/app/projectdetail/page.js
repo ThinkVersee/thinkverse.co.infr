@@ -1,7 +1,8 @@
 // src/app/works/page.js
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Portfolio from "@/components/home/Portfolio"; // Adjust path if needed
+import Portfolio from "@/components/Portfolio/Portfolio";
+
 
 export default function WorksPage() {
   return (
