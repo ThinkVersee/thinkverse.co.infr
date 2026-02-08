@@ -1,188 +1,102 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
+import { projectsData } from '@/data/projectsData';
 
 const Works = () => {
-    const projects = [
-        {
-            title: 'UI/UX Design',
-            description: 'We design intuitive and engaging interfaces by deeply understanding users and business goals.',
-            large: true,
-            imageUrl: 'https://thumbs.dreamstime.com/b/modern-silver-laptop-blank-white-screen-centrally-placed-vibrant-green-mossy-surface-revealing-layers-rich-brown-397245033.jpg' // Perfect match: laptop on natural rock/moss with plants
-        },
-        {
-            title: 'UI/UX Design',
-            description: '',
-            large: false,
-            imageUrl: 'https://thumbs.dreamstime.com/b/minimal-mockup-laptop-plants-white-background-clean-featuring-green-arranged-right-side-perfect-template-389196873.jpg' // Clean laptop with plants
-        },
-        {
-            title: 'UI/UX Design',
-            description: '',
-            large: false,
-            imageUrl: 'https://thumbs.dreamstime.com/b/laptop-white-blank-screen-mockup-standing-rock-mountains-river-flows-background-freelancer-work-nature-park-portable-360493752.jpg' // Laptop on rock in natural setting
-        }
-    ];
+    const router = useRouter();
+    const worksProjects = projectsData.slice(0, 3);
 
     const Card = ({ project, isLarge }) => {
         const [isHovered, setIsHovered] = React.useState(false);
 
+        const handleClick = () => {
+            router.push(`/projects/${project.slug}`);
+        };
+
         return (
             <div
-                style={{
-                    width: isLarge ? '738px' : '521px',
-                    height: isLarge ? '896px' : '438px',
-                    background: isLarge ? 'linear-gradient(135deg, #e0d5c2 0%, #d0c0a8 100%)' : '#14B5720D',
-                    borderRadius: '22px',
-                    padding: '24px',
-                    border: isLarge ? '1px solid #C9C9C980' : 'none',
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    transition: 'all 0.4s ease',
-                    cursor: 'pointer',
-                    overflow: 'hidden',
-                    transform: isHovered ? 'translateY(-12px)' : 'translateY(0)',
-                    boxShadow: isHovered 
-                        ? '0 30px 60px rgba(0,0,0,0.15)' 
-                        : '0 8px 25px rgba(0,0,0,0.08)'
-                }}
+                className={`
+                    ${isLarge ? 'w-[738px] h-[896px]' : 'w-[521px] h-[438px]'}
+                    ${isLarge ? 'bg-gradient-to-br from-[#e0d5c2] to-[#d0c0a8]' : 'bg-[#14B5720D]'}
+                    rounded-[22px] p-6 relative flex flex-col
+                    transition-all duration-300 ease-out cursor-pointer
+                    border border-[#C9C9C980]
+                    ${isHovered ? '-translate-y-2 shadow-[0_20px_40px_rgba(0,0,0,0.1)]' : 'shadow-[0_8px_20px_rgba(0,0,0,0.06)]'}
+                `}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onClick={handleClick}
             >
-                {/* Arrow Button - matches your second style */}
-                <div style={{
-                    position: 'absolute',
-                    top: '24px',
-                    right: '24px',
-                    width: '48px',
-                    height: '48px',
-                    background: isHovered ? '#ffffff' : 'transparent',
-                    border: '2px solid #ffffff',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'all 0.3s ease',
-                    boxShadow: isHovered ? '0 6px 20px rgba(0,0,0,0.12)' : 'none'
-                }}>
-                    <span style={{
-                        fontSize: '24px',
-                        color: '#aaaaaa',
-                        fontWeight: '300'
-                    }}>
-                        ↑
-                    </span>
+                {/* Top Section - Category and Arrow */}
+                <div className="flex justify-between items-center mb-6">
+                    {/* Category Badge */}
+                    <div className="bg-black/70 text-white px-4 py-2 rounded-full text-xs font-medium uppercase tracking-wide">
+                        {project.category}
+                    </div>
+
+                    {/* Arrow Button */}
+                    <div className={`
+                        w-12 h-12 rounded-full flex items-center justify-center
+                        border-2 border-white transition-all duration-300
+                        ${isHovered ? 'bg-white rotate-45' : 'bg-transparent rotate-0'}
+                    `}>
+                        <span className={`text-2xl font-light transition-colors duration-300 ${isHovered ? 'text-gray-700' : 'text-[#aaaaaa]'}`}>
+                            ↗
+                        </span>
+                    </div>
                 </div>
 
-                {/* Real image - perfectly fitted */}
-                <div style={{
-                    flex: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '20px 0'
-                }}>
+                {/* Image Container - Fixed height */}
+                <div className={`${isLarge ? 'h-[650px]' : 'h-[240px]'} mb-6 rounded-xl overflow-hidden`}>
                     <img 
-                        src={project.imageUrl}
-                        alt="Project Mockup"
-                        style={{
-                            maxWidth: '92%',
-                            maxHeight: '92%',
-                            objectFit: 'contain',
-                            borderRadius: '12px',
-                            boxShadow: '0 15px 35px rgba(0,0,0,0.18)'
-                        }}
+                        src={project.worksImage}
+                        alt={project.title}
+                        className={`
+                            w-full h-full object-cover
+                            transition-transform duration-500 ease-out
+                            ${isHovered ? 'scale-105' : 'scale-100'}
+                        `}
                     />
                 </div>
 
-                {/* Text Box */}
-                <div style={{
-                    background: '#ffffff',
-                    padding: '28px',
-                    borderRadius: '16px',
-                    boxShadow: '0 6px 18px rgba(0,0,0,0.1)'
-                }}>
-                    <h3 style={{
-                        fontSize: '20px',
-                        fontWeight: 600,
-                        color: '#1a1a1a',
-                        margin: '0 0 12px 0'
-                    }}>
+                {/* Title Card - Always visible at bottom */}
+                <div className="bg-white p-5 rounded-2xl shadow-sm mt-auto">
+                    <h3 className="text-2xl font-semibold text-[#1a1a1a] m-0">
                         {project.title}
                     </h3>
-                    {project.description && (
-                        <p style={{
-                            fontSize: '14px',
-                            color: '#666666',
-                            lineHeight: '1.6',
-                            margin: 0
-                        }}>
-                            {project.description}
-                        </p>
-                    )}
                 </div>
             </div>
         );
     };
 
     return (
-        <div style={{
-            background: '#ffffff',
-            padding: '120px 0'
-        }}>
-            <div style={{ 
-                width: '1279px', 
-                margin: '0 auto'
-            }}>
+        <div className="bg-white py-[120px]">
+            <div className="w-[1279px] mx-auto">
                 {/* Header */}
-                <div style={{ textAlign: 'center', marginBottom: '100px' }}>
-                    <div style={{
-                        display: 'inline-block',
-                        padding: '10px 28px',
-                        background: '#ffffff',
-                        border: '1px solid #e0e0e0',
-                        borderRadius: '40px',
-                        fontSize: '15px',
-                        fontWeight: 600,
-                        textTransform: 'uppercase',
-                        letterSpacing: '2px',
-                        color: '#888'
-                    }}>
+                <div className="text-center mb-[100px]">
+                    <div className="inline-block py-[10px] px-7 bg-white border border-[#e0e0e0] rounded-[40px] text-[15px] font-semibold uppercase tracking-[2px] text-[#888] mb-10">
                         • RECENT WORKS
                     </div>
-                    <h1 style={{
-                        fontSize: '54px',
-                        fontWeight: 500,
-                        color: '#1a1a1a',
-                        lineHeight: '1.1',
-                        margin: '40px auto 50px',
-                        width: '607px'
-                    }}>
-                        We design intuitive and engaging interfaces
+                    
+                    <h1 className="text-[54px] font-medium text-[#1a1a1a] leading-[1.2] mb-12 mx-auto max-w-[700px]">
+                        Showcasing thoughtfully crafted digital solutions
                     </h1>
-                     {/* Multi-color Underline (Yellow + Green) */}
-          <div className="flex justify-center gap-1 mb-12">
-            <div style={{ width: '315px', height: '5px', backgroundColor: '#F7D046', borderRadius: '3px' }}></div>
-            <div style={{ width: '80px', height: '5px', backgroundColor: '#10B981', borderRadius: '3px' }}></div>
-          </div>
+                    
+                    {/* Multi-color Underline */}
+                    <div className="flex justify-center gap-1">
+                        <div className="w-[315px] h-[5px] bg-[#F7D046] rounded-[3px]"></div>
+                        <div className="w-20 h-[5px] bg-[#10B981] rounded-[3px]"></div>
+                    </div>
                 </div>
 
                 {/* Cards Layout */}
-                <div style={{
-                    display: 'flex',
-                    gap: '42px',
-                    alignItems: 'flex-start'
-                }}>
-                    <Card project={projects[0]} isLarge={true} />
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '20px'
-                    }}>
-                        <Card project={projects[1]} isLarge={false} />
-                        <Card project={projects[2]} isLarge={false} />
+                <div className="flex gap-[42px] items-start">
+                    <Card project={worksProjects[0]} isLarge={true} />
+                    <div className="flex flex-col gap-5">
+                        <Card project={worksProjects[1]} isLarge={false} />
+                        <Card project={worksProjects[2]} isLarge={false} />
                     </div>
                 </div>
             </div>

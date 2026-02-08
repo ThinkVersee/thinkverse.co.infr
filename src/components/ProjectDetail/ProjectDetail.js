@@ -9,7 +9,7 @@ const projectData = {
         title: 'Cinema Casting Company',
         category: 'Web Application Development',
         overview: 'Talent Meets Opportunity – A modern social media and casting platform connecting actors, directors, production houses, and casting teams, with a strong focus on Malayalam cinema, short films, reels, and digital media.',
-        heroImage: '/cinema-1.png',
+        heroImage: '/ccc/login.png',
         features: [
             'Social feed with posts, likes, comments, photos & videos',
             'Advanced role search with filters (location, salary, experience, employment type)',
@@ -22,7 +22,7 @@ const projectData = {
         title: 'eMassh – Online Tuition Platform',
         category: 'Website Development',
         overview: 'A live online learning platform connecting students with expert tutors, offering structured courses, notes, quizzes, progress tracking, and personalized learning paths.',
-        heroImage: '/emassh-1.png',
+        heroImage: '/emash/emassh-1.png',
         features: [
             'Live video classes and interactive sessions',
             'Structured course materials and downloadable notes',
@@ -36,7 +36,7 @@ const projectData = {
         title: 'Bus Book – Fleet Management',
         category: 'Web Application Development',
         overview: 'A comprehensive system for bus operators to track finances, maintenance, routes, and fleet performance in real-time.',
-        heroImage: '/bus-1.png',
+        heroImage: '/busbook/bus-1.png',
         features: [
             'Income and expense tracking with reports',
             'Maintenance scheduling and logs',
@@ -130,13 +130,14 @@ export default function ProjectDetail({ slug }) {
                     {slug === 'bus-book-fleet-management' && (
                         <>
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="/bus-2.png" alt="Main Dashboard" className="w-full h-auto object-cover" />
+                                <img src="/busbook/bus-2.png" alt="Main Dashboard" className="w-full h-auto object-cover" />
                             </div>
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800" alt="Fleet Overview" className="w-full h-auto object-cover" />
+                                <img src="/busbook/busbook.png" alt="Fleet Overview" className="w-full h-auto object-cover" />
                             </div>
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1554224320-2e5472f8b2e7?w=800" alt="Reports" className="w-full h-auto object-cover" />
+                                <img src="/busbook/busbook2.png" alt="Fleet Overview" className="w-full h-auto object-cover" />
+
                             </div>
                         </>
                     )}

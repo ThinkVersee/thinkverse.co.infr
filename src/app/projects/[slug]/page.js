@@ -1,5 +1,5 @@
 // src/app/projects/[slug]/page.js
-import ProjectDetail from "@/components/ProjectDetail/ProjectDetail";
+import ProjectDetail from "@/components/projectdetail/ProjectDetail";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 

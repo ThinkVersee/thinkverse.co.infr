@@ -1,41 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
-
-const categories = [
-    'All',
-    'UI/UX Designing',
-    'Mobile Application Development',
-    'Website Development',
-    'Web Application Development'
-];
-
-const projects = [
-    {
-        id: 1,
-        title: 'Cinema Casting Company',
-        description: 'A dedicated social media and casting platform connecting actors, directors, production houses, and casting teams. Features include talent search, casting calls, verified profiles, messages, and opportunities in film, short films, and digital media – with a focus on the Malayalam industry.',
-        category: 'Web Application Development',
-        slug: 'cinema-casting-company',
-        heroImage: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80'
-    },
-    {
-        id: 2,
-        title: 'eMassh – Online Tuition Platform',
-        description: 'Live online tuition connecting students with expert tutors, structured notes, and personalized learning paths.',
-        category: 'Website Development',
-        slug: 'emassh-online-tuition',
-        heroImage: 'https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-        id: 5,
-        title: 'Bus Book – Fleet Management',
-        description: 'Complete financial tracking system for bus operators with income, expense & maintenance logs.',
-        category: 'Web Application Development',
-        slug: 'bus-book-fleet-management',
-        heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80'
-    },
-];
+import { projectsData, categories } from '@/data/projectsData';
 
 export default function Portfolio() {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -55,8 +21,8 @@ export default function Portfolio() {
     }, []);
 
     const filteredProjects = selectedCategory === 'All'
-        ? projects
-        : projects.filter(p => p.category === selectedCategory);
+        ? projectsData
+        : projectsData.filter(p => p.category === selectedCategory);
 
     return (
         <section ref={sectionRef} className="py-20 lg:py-32 bg-white relative overflow-hidden">
@@ -121,7 +87,7 @@ export default function Portfolio() {
                                     {project.title}
                                 </h3>
 
-                                {/* Arrow Button - NOW GREEN */}
+                                {/* Arrow Button */}
                                 <div className="mt-auto pt-2">
                                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-green-500 text-green-500 transition-all duration-300 group-hover:bg-green-500 group-hover:text-white group-hover:translate-x-1">
                                         <ArrowRight className="w-5 h-5" />
