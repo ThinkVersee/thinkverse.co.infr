@@ -1,66 +1,74 @@
 export default function About() {
   return (
-    <section className="relative bg-white min-h-screen flex items-center justify-center overflow-hidden py-20">
-      {/* Removed background image and overlay */}
+    <section className="relative bg-white flex items-center justify-center overflow-hidden    px-4 sm:px-6 lg:px-8">
 
       {/* Centered White Card */}
-      <div className="relative z-10 max-w-4xl mx-4 sm:mx-8">
-        <div className="bg-white rounded-[2.5rem] shadow-2xl px-12 py-16 sm:px-16 sm:py-20 md:px-20 md:py-24 text-center border border-gray-100">
+      <div className="relative z-10 w-full max-w-4xl">
+        <div className="bg-white rounded-[1rem] sm:rounded-[1rem] lg:rounded-[2rem]   px-6 py-5 sm:px-5 sm:py-7 md:px-16 md:py-18 lg:px-20 lg:py-12 text-center border border-gray-200">
+
           {/* Pill Button */}
-          <div className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-7 py-3 mb-12 text-sm font-medium text-gray-600 bg-white">
+          <div className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-4 sm:px-6 lg:px-7 py-2 sm:py-2.5 lg:py-3 mb-8 sm:mb-10 lg:mb-12 text-xs sm:text-sm font-medium text-gray-600 bg-white">
             <span className="text-gray-400">•</span>
             ABOUT THINKVERSE
           </div>
 
           {/* Main Heading */}
-          <h2 
-            className="text-gray-900 mb-8" 
-            style={{ 
+          <h2
+            className="text-gray-900 mb-6 sm:mb-7 lg:mb-8 text-4xl sm:text-5xl lg:text-[54px]"
+            style={{
               fontFamily: 'Halenoir, Georgia, serif',
               fontWeight: 500,
-              fontSize: '54px',
               lineHeight: '100%',
               letterSpacing: '0%',
-              textAlign: 'center'
+              textAlign: 'center',
             }}
           >
             Who we are
           </h2>
 
-          {/* Multi-color Underline (Yellow + Green) */}
-          <div className="flex justify-center gap-1 mb-12">
-            <div style={{ width: '315px', height: '5px', backgroundColor: '#F7D046', borderRadius: '3px' }}></div>
-            <div style={{ width: '80px', height: '5px', backgroundColor: '#10B981', borderRadius: '3px' }}></div>
+          {/* Multi-color Underline */}
+          <div className="flex justify-center gap-1 mb-8 sm:mb-10 lg:mb-12">
+            <div
+              className="h-[4px] sm:h-[5px] rounded-[3px]"
+              style={{
+                width: 'clamp(140px, 40vw, 315px)',
+                backgroundColor: '#F7D046',
+              }}
+            />
+            <div
+              className="h-[4px] sm:h-[5px] rounded-[3px]"
+              style={{
+                width: 'clamp(40px, 10vw, 80px)',
+                backgroundColor: '#10B981',
+              }}
+            />
           </div>
 
           {/* Description Text */}
-          <div 
-            style={{ 
+          <div
+            className="text-sm sm:text-base mx-auto px-0 sm:px-4 md:px-0"
+            style={{
               maxWidth: '607px',
               fontFamily: 'Halenoir, Georgia, serif',
               fontWeight: 400,
-              fontSize: '16px',
-              lineHeight: '24px',
+              lineHeight: '1.6',
               letterSpacing: '0%',
               textAlign: 'center',
               color: '#000000B2',
-              margin: '0 auto'
             }}
           >
-            <p className="mb-6">
-              Thinkverse is a creative IT service company focused on building modern digital experiences through design, technology, and strategy.<br></br>
-              We don't just deliver projects — we collaborate, think deeply, and build products that make an impact.
+            <p>
+              Thinkverse is a creative IT service company focused on building modern digital
+              experiences through design, technology, and strategy.
+              <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>
+              We don't just deliver projects — we collaborate, think deeply, and build products
+              that make an impact.
             </p>
           </div>
+
         </div>
       </div>
-
-      {/* Optional: Removed decorative blurred circles for cleaner look */}
-      {/* If you want to keep subtle accents, uncomment below */}
-      {/* 
-      <div className="absolute top-10 left-10 w-72 h-72 bg-yellow-300/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-green-300/10 rounded-full blur-3xl"></div>
-      */}
     </section>
   );
 }

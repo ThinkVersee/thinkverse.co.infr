@@ -2,103 +2,93 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { ArrowRight } from 'lucide-react';
 import { projectsData } from '@/data/projectsData';
 
 const Works = () => {
     const router = useRouter();
     const worksProjects = projectsData.slice(0, 3);
 
-    const Card = ({ project, isLarge }) => {
-        const [isHovered, setIsHovered] = React.useState(false);
-
+    const Card = ({ project }) => {
         const handleClick = () => {
             router.push(`/projects/${project.slug}`);
         };
 
         return (
             <div
-                className={`
-                    ${isLarge ? 'w-[738px] h-[896px]' : 'w-[521px] h-[438px]'}
-                    ${isLarge ? 'bg-gradient-to-br from-[#e0d5c2] to-[#d0c0a8]' : 'bg-[#14B5720D]'}
-                    rounded-[22px] p-6 relative flex flex-col
-                    transition-all duration-300 ease-out cursor-pointer
-                    border border-[#C9C9C980]
-                    ${isHovered ? '-translate-y-2 shadow-[0_20px_40px_rgba(0,0,0,0.1)]' : 'shadow-[0_8px_20px_rgba(0,0,0,0.06)]'}
-                `}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 onClick={handleClick}
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full cursor-pointer border border-gray-100"
             >
-                {/* Top Section - Category and Arrow */}
-                <div className="flex justify-between items-center mb-6">
-                    {/* Category Badge */}
-                    <div className="bg-black/70 text-white px-4 py-2 rounded-full text-xs font-medium uppercase tracking-wide">
-                        {project.category}
-                    </div>
-
-                    {/* Arrow Button */}
-                    <div className={`
-                        w-12 h-12 rounded-full flex items-center justify-center
-                        border-2 border-white transition-all duration-300
-                        ${isHovered ? 'bg-white rotate-45' : 'bg-transparent rotate-0'}
-                    `}>
-                        <span className={`text-2xl font-light transition-colors duration-300 ${isHovered ? 'text-gray-700' : 'text-[#aaaaaa]'}`}>
-                            ↗
-                        </span>
-                    </div>
-                </div>
-
-                {/* Image Container - Fixed height */}
-                <div className={`${isLarge ? 'h-[650px]' : 'h-[240px]'} mb-6 rounded-xl overflow-hidden`}>
-                    <img 
+                {/* Project Image */}
+                <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
+                    <img
                         src={project.worksImage}
                         alt={project.title}
-                        className={`
-                            w-full h-full object-cover
-                            transition-transform duration-500 ease-out
-                            ${isHovered ? 'scale-105' : 'scale-100'}
-                        `}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 </div>
 
-                {/* Title Card - Always visible at bottom */}
-                <div className="bg-white p-5 rounded-2xl shadow-sm mt-auto">
-                    <h3 className="text-2xl font-semibold text-[#1a1a1a] m-0">
+                {/* Card Info */}
+                <div className="flex flex-col flex-grow p-4 sm:p-5 lg:p-8">
+                    {/* Category Badge */}
+                    <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-black text-white text-xs font-medium rounded-full mb-3 sm:mb-4 lg:mb-5 self-start uppercase tracking-wide">
+                        {project.category}
+                    </span>
+
+                    {/* Project Title */}
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 line-clamp-2 mb-3 sm:mb-4 lg:mb-6 min-h-[2.8rem] lg:min-h-[3.5rem]">
                         {project.title}
                     </h3>
+
+                    {/* Arrow Button */}
+                    <div className="mt-auto pt-1 sm:pt-2">
+                        <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-green-500 text-green-500 transition-all duration-300 group-hover:bg-green-500 group-hover:text-white group-hover:translate-x-1">
+                            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                        </div>
+                    </div>
                 </div>
             </div>
         );
     };
 
     return (
-        <div className="bg-white py-[120px]">
-            <div className="w-[1279px] mx-auto">
+        <div className="bg-white py-6 sm:py-8 lg:py-10 xl:py-[60px] px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1279px] mx-auto">
+
                 {/* Header */}
-                <div className="text-center mb-[100px]">
-                    <div className="inline-block py-[10px] px-7 bg-white border border-[#e0e0e0] rounded-[40px] text-[15px] font-semibold uppercase tracking-[2px] text-[#888] mb-10">
+                <div className="text-center mb-10 sm:mb-14 lg:mb-20 xl:mb-[60px]">
+                    <div className="inline-block py-2 sm:py-[10px] px-5 sm:px-7 bg-white border border-[#e0e0e0] rounded-[40px] text-xs sm:text-[13px] lg:text-[15px] font-semibold uppercase tracking-[2px] text-[#888] mb-6 sm:mb-8 lg:mb-10">
                         • RECENT WORKS
                     </div>
-                    
-                    <h1 className="text-[54px] font-medium text-[#1a1a1a] leading-[1.2] mb-12 mx-auto max-w-[700px]">
+
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] font-medium text-[#1a1a1a] leading-[1.2] mb-8 sm:mb-10 lg:mb-12 mx-auto max-w-xs sm:max-w-md lg:max-w-[700px]">
                         Showcasing thoughtfully crafted digital solutions
                     </h1>
-                    
+
                     {/* Multi-color Underline */}
                     <div className="flex justify-center gap-1">
-                        <div className="w-[315px] h-[5px] bg-[#F7D046] rounded-[3px]"></div>
-                        <div className="w-20 h-[5px] bg-[#10B981] rounded-[3px]"></div>
+                        <div
+                            className="h-[4px] sm:h-[5px] bg-[#F7D046] rounded-[3px]"
+                            style={{ width: 'clamp(120px, 35vw, 315px)' }}
+                        />
+                        <div
+                            className="h-[4px] sm:h-[5px] bg-[#10B981] rounded-[3px]"
+                            style={{ width: 'clamp(35px, 9vw, 80px)' }}
+                        />
                     </div>
                 </div>
 
-                {/* Cards Layout */}
-                <div className="flex gap-[42px] items-start">
-                    <Card project={worksProjects[0]} isLarge={true} />
-                    <div className="flex flex-col gap-5">
-                        <Card project={worksProjects[1]} isLarge={false} />
-                        <Card project={worksProjects[2]} isLarge={false} />
-                    </div>
+                {/* Cards Grid
+                    Mobile:  1 column  (stacked, current design preserved)
+                    Tablet:  2 columns
+                    Desktop: 3 columns (Portfolio-style uniform grid)
+                */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+                    {worksProjects.map((project) => (
+                        <Card key={project.id} project={project} />
+                    ))}
                 </div>
+
             </div>
         </div>
     );
