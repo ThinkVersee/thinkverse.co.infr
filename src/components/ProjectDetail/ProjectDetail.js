@@ -61,15 +61,17 @@ const projectData = {
         ]
     },
     'tasty-toast-cafe': {
-        title: 'Tasty Toast Café',
-        category: 'Web Application Development',
-        overview: 'A powerful multi-restaurant admin panel built for café and food business owners to manage finances, staff, menu, vendors, and daily operations — all in one clean dashboard. Currently live across two restaurants: Tasty Toast (Mannarkkad) and Lassi Factory (Tirur).',
-        heroImage: '/ttcafe/dashboard.png',
-        stats: [
-            { label: 'Restaurants', value: '2 Active' },
-            { label: 'Industry', value: 'Food & Beverage' },
-            { label: 'Platform', value: 'Admin Panel' },
-        ],
+    title: 'Tasty Toast Café',
+    category: 'Web Application Development',
+    overview: 'A powerful multi-restaurant admin panel built for café and food business owners to manage finances, staff, menu, vendors, and daily operations — all in one clean dashboard. Currently live across two restaurants: Tasty Toast (Mannarkkad) and Lassi Factory (Tirur).',
+    heroImage: '/ttc-1.png',
+    liveUrl: 'https://www.tastytoastcafe.in/',
+    stats: [
+        { label: 'Industry', value: 'Food & Beverage' },
+        { label: 'Platform', value: 'Admin Panel' },
+        { label: 'Restaurants', value: 'Multi-Branch' },
+        { label: 'Finance', value: 'Real-time' },
+    ],
         highlights: [
             {
                 icon: '📊',
@@ -86,16 +88,16 @@ const projectData = {
                 title: 'Daily Performance Charts',
                 desc: 'Visual bar and composed charts showing daily Income, Expense, and Profit Margin % across any date range. Tracks Avg Daily Income, Avg Daily Expense, and highlights the Best performing day.'
             },
-            {
-                icon: '🗂️',
-                title: 'Category Management',
-                desc: 'Fully customisable expense and income categories — from Chicken, Gas, Milk, Egg, and KSEB to Online/Offline income, Deposits, and Withdrawals. Subcategories supported per category.'
-            },
-            {
-                icon: '👨‍🍳',
-                title: 'Staff & Attendance',
-                desc: 'Staff list with roles (Manager, Waiter, Juice Maker, Accountant), monthly salary, join date, and contact. Tracks attendance and handles salary settlements and advance payments per employee.'
-            },
+      {
+    icon: '🗂️',
+    title: 'Category Management',
+    desc: 'Fully customisable expense and income categories with subcategory support. Owners can define their own category structure to match how their business tracks purchases, income, and operational costs.'
+},
+    {
+    icon: '👨‍🍳',
+    title: 'Staff & Attendance',
+    desc: 'Manage staff with their assigned roles, monthly salary, join date, and contact details. Tracks attendance and handles salary settlements and advance payments per employee.'
+},
             {
                 icon: '📋',
                 title: 'Financial Reports & Export',
@@ -106,11 +108,11 @@ const projectData = {
                 title: 'Menu Management',
                 desc: 'Add and manage menu items with a Gallery view. Organised per restaurant so Tasty Toast and Lassi Factory each have their own independent menu structure.'
             },
-            {
-                icon: '🏪',
-                title: 'Multi-Restaurant Support',
-                desc: 'Admins can switch between restaurants (Tasty Toast – Mannarkkad and Lassi Factory – Tirur) from a single login. Each restaurant has isolated data, staff, and financials.'
-            },
+          {
+    icon: '🏪',
+    title: 'Multi-Restaurant Support',
+    desc: 'Admins can switch between multiple restaurant branches from a single login. Each branch has fully isolated data, staff, and financials — making it ideal for growing food businesses.'
+},
         ],
         features: [
             'Multi-restaurant dashboard from a single admin login',
@@ -126,24 +128,80 @@ const projectData = {
         ]
     },
     'emassh-online-tuition': {
-        title: 'eMassh – Online Tuition Platform',
-        category: 'Website Development',
-        overview: 'A live online learning platform connecting students with expert tutors, offering structured courses, notes, quizzes, progress tracking, and personalized learning paths.',
-        heroImage: '/emash/emassh-1.png',
-        features: [
-            'Live video classes and interactive sessions',
-            'Structured course materials and downloadable notes',
-            'Student progress tracking and analytics',
-            'Tutor scheduling and booking system',
-            'Quiz and assessment tools',
-            'Clean, responsive dashboard for students and tutors'
-        ]
-    },
+    title: 'eMassh – Online Tuition Platform',
+    category: 'Website Development',
+    overview: 'A full-featured online learning platform connecting students with industry-expert instructors. eMassh offers structured courses, live sessions, quizzes, progress tracking, and recognised certificates — making quality education accessible to everyone, everywhere.',
+    heroImage: '/emash/emassh-1.png',
+    liveUrl: 'https://www.emassh.in/',
+    stats: [
+ 
+    { label: 'Industry', value: 'EdTech' },
+    { label: 'Platform', value: 'Web App' },
+    { label: 'Sessions', value: 'Live & Recorded' },
+    { label: 'Certificates', value: 'Verified' },
+ 
+    ],
+    highlights: [
+        {
+            icon: '🎥',
+            title: 'Live & Recorded Classes',
+            desc: 'Students attend live interactive sessions with instructors or catch up via recorded lectures — flexible learning that fits any schedule.'
+        },
+        {
+            icon: '📚',
+            title: 'Structured Course Library',
+            desc: 'Over 500 courses organised by subject and skill level, each with video lessons, downloadable notes, and practical projects to reinforce learning.'
+        },
+        {
+            icon: '🧠',
+            title: 'Quizzes & Assessments',
+            desc: 'Built-in quiz engine lets instructors create timed assessments. Students get instant feedback and scores tracked against their learning path.'
+        },
+        {
+            icon: '📈',
+            title: 'Progress Tracking Dashboard',
+            desc: 'Each student has a personal dashboard showing completed lessons, quiz scores, course completion %, and upcoming sessions at a glance.'
+        },
+        {
+            icon: '🏆',
+            title: 'Recognised Certificates',
+            desc: 'Students earn verifiable certificates upon course completion — shareable on LinkedIn and résumés to validate real-world skills to employers.'
+        },
+        {
+            icon: '👩‍🏫',
+            title: 'Expert Instructor Profiles',
+            desc: 'Platform features 50+ verified instructors from leading companies. Each profile shows credentials, courses taught, and student ratings — helping learners pick the right mentor.'
+        },
+        {
+            icon: '🤝',
+            title: 'Learner Community',
+            desc: 'Students and mentors connect through discussion threads and course communities, enabling peer learning and networking beyond the classroom.'
+        },
+        {
+            icon: '📅',
+            title: 'Tutor Booking & Scheduling',
+            desc: 'Students can book 1-on-1 sessions directly via the tutor scheduling system, with calendar integration and automated reminders before each class.'
+        },
+    ],
+    features: [
+        'Live video classes and interactive sessions',
+        'Structured course materials and downloadable notes',
+        'Quiz and assessment engine with instant feedback',
+        'Student progress tracking and analytics dashboard',
+        'Tutor scheduling and 1-on-1 booking system',
+        'Verified certificates upon course completion',
+        'Expert instructor profiles with ratings',
+        'Learner community with discussion forums',
+        'Mobile-responsive design for learning on the go',
+        'Newsletter and course update notifications'
+    ]
+},
     'bus-book-fleet-management': {
         title: 'Bus Book – Fleet Management',
         category: 'Web Application Development',
         overview: 'A dedicated fleet management and billing system built for bus operators to track daily collections, manage staff, monitor expenses, and view real-time financial health — all from a single owner dashboard. Currently live with real transaction history dating back across months.',
         heroImage: '/busbook/bus-1.png',
+          liveUrl: 'https://busbook.thinkverse.co.in/',
         stats: [
            { label: 'Income Tracked', value: 'Multi-Month' },
 { label: 'Wallet System', value: 'Live Balance' },
@@ -238,9 +296,9 @@ export default function ProjectDetail({ slug }) {
             { src: '/emassh-3.png', alt: 'Analytics' },
         ],
         'tasty-toast-cafe': [
-            { src: '/ttcafe/dashboard.png', alt: 'Financial Dashboard' },
-            { src: '/ttcafe/reports.png', alt: 'Financial Reports' },
-            { src: '/ttcafe/staff.png', alt: 'Staff Management' },
+            { src: '/ttc-1.png', alt: 'Financial Dashboard' },
+            { src: '/ttc-1.png', alt: 'Financial Reports' },
+            { src: '/ttc-1.png', alt: 'Staff Management' },
         ],
         'bus-book-fleet-management': [
             { src: '/busbook/bus-2.png', alt: 'Main Dashboard' },
@@ -254,14 +312,14 @@ export default function ProjectDetail({ slug }) {
     return (
         <section
             ref={sectionRef}
-            className="bg-white text-gray-900 pt-20 pb-0 sm:py-14 lg:py-18 px-4 sm:px-6 lg:px-8"
+            className="bg-white text-gray-900 pt-20 pb-0 sm:py-24 lg:py-28 xl:py-28 px-4 sm:px-6 lg:px-8"
         >
             <div className="max-w-[1200px] mx-auto">
 
                 {/* ── Back Link ── */}
                 <div className={`mb-4 sm:mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
                     <Link
-                        href="/#portfolio"
+                        href="/portfolio"
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-gray-500 hover:text-gray-900 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 text-sm font-medium"
                     >
                         <ArrowLeft className="w-4 h-4" />

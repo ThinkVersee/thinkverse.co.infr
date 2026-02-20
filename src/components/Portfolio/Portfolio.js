@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { projectsData, categories } from '@/data/projectsData';
+import Link from "next/link";
 
 export default function Portfolio() {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -100,56 +101,69 @@ export default function Portfolio() {
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-                    {filteredProjects.map((project, index) => (
-                        <a
-                            href={`/projects/${project.slug}`}
-                            key={project.id}
-                            className={`
-                                group relative bg-white rounded-2xl overflow-hidden
-                                shadow-sm border border-gray-100
-                                transition-all duration-500
-                                hover:-translate-y-2 hover:shadow-2xl
-                                flex flex-col h-full cursor-pointer
-                                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
-                            `}
-                            style={{ transitionDelay: `${index * 120 + 400}ms` }}
-                        >
-                            {/* Project Image */}
-                            <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
-                                <img
-                                    src={project.heroImage}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
-                            </div>
+        
+{/* Projects Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+    {filteredProjects.map((project, index) => (
+        <Link
+            href={`/projects/${project.slug}`}
+            key={project.id}
+            className={`
+                group relative bg-white rounded-2xl overflow-hidden
+                shadow-sm border border-gray-100
+                transition-all duration-500
+                hover:-translate-y-2 hover:shadow-2xl
+                flex flex-col cursor-pointer
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
+            `}
+            style={{ transitionDelay: `${index * 120 + 400}ms` }}
+        >
+            {/* Project Image */}
+            <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
+                <img
+                    src={project.heroImage}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Category Badge over image */}
+                <span className="absolute top-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-sm text-white text-[10px] font-semibold rounded-full uppercase tracking-wide">
+                    {project.category}
+                </span>
+            </div>
 
-                            {/* Card Info */}
-                            <div className="p-4 sm:p-5 lg:p-8 flex flex-col flex-grow">
+            {/* Card Info */}
+            <div className="p-5 sm:p-6 flex flex-col gap-2.5">
 
-                                {/* Category Badge — matches Works page style exactly */}
-                                <span className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-black text-white text-[10px] sm:text-xs font-medium rounded-full mb-3 sm:mb-4 lg:mb-5 self-start uppercase tracking-wide">
-                                    {project.category}
-                                </span>
+                {/* Project Title */}
+                <h3
+                    style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 700 }}
+                    className="text-base sm:text-lg lg:text-xl text-gray-900 line-clamp-1"
+                >
+                    {project.title}
+                </h3>
 
-                                {/* Project Title */}
-                                <h3
-                                    style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 700 }}
-                                    className="text-base sm:text-xl lg:text-2xl text-gray-900 mb-3 sm:mb-4 lg:mb-6 line-clamp-2 min-h-[2.5rem] lg:min-h-[3.5rem]"
-                                >
-                                    {project.title}
-                                </h3>
+                {/* Divider */}
+                <div className="h-px bg-gray-100" />
 
-                                {/* Arrow Button — green, matching Works page */}
-                                <div className="mt-auto pt-1 sm:pt-2">
-                                    <div className="inline-flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-full border-2 border-[#10B981] text-[#10B981] transition-all duration-300 group-hover:bg-[#10B981] group-hover:text-white group-hover:translate-x-1">
-                                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    ))}
+                {/* Description */}
+                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed line-clamp-2">
+                    {project.description}
+                </p>
+
+                {/* Footer Row */}
+                <div className="flex items-center justify-between pt-1">
+                    <span className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">
+                        View Project
+                    </span>
+                    <div className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#10B981] text-[#10B981] transition-all duration-300 group-hover:bg-[#10B981] group-hover:text-white group-hover:translate-x-1">
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </div>
                 </div>
+            </div>
+        </Link>
+    ))}
+</div>
+
 
             </div>
         </section>
