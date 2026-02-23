@@ -116,7 +116,7 @@ export default function Portfolio() {
                             style={{ transitionDelay: `${index * 120 + 400}ms` }}
                         >
                             {/* Project Image */}
-                            <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
+                            <div className="relative w-full aspect-[3/3] overflow-hidden bg-gray-100">
                                 <img
                                     src={project.heroImage}
                                     alt={project.title}

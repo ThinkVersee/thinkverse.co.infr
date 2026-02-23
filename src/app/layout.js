@@ -29,15 +29,11 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url:
-          "data:image/svg+xml;utf8," +
-          encodeURIComponent(`
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-              <text x='50%' y='60%' text-anchor='middle' font-size='70' font-family='Arial' fill='#7C3AED'>t</text>
-            </svg>
-          `),
+        url: "/Group3.svg",
+        sizes: "100x100",
         type: "image/svg+xml",
       },
+      
     ],
   },
 };
@@ -45,7 +41,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

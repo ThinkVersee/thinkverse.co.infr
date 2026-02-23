@@ -85,7 +85,7 @@ export default function ThinkVerseNavbar() {
           {/* Left — Logo */}
           <div className="flex-shrink-0 flex items-center md:flex-1">
             <img
-              src="/Group 3.svg"
+              src="/Group3.svg"
               alt="ThinkVerse Logo"
               className="h-8 w-auto cursor-pointer hover:scale-105 transition-transform"
               onClick={handleLogoClick}
