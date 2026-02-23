@@ -73,8 +73,163 @@ export const projectsData = [
     ],
   },
 
-  {
+   {
     id: 2,
+    title: "Tasty Toast Cafe",
+    slug: "tasty-toast-cafe",
+    category: "Web Application Development",
+    heroImage: "/ttc/ttc.jpg",
+    description:
+      "Modern cafe website with online menu, reservation system, and food gallery.",
+    overview:
+      "A powerful multi-restaurant admin panel built for café and food business owners to manage finances, staff, menu, vendors, and daily operations — all in one clean dashboard. Currently live across two restaurants: Tasty Toast (Mannarkkad) and Lassi Factory (Tirur).",
+    liveUrl: "https://www.tastytoastcafe.in/",
+    stats: [
+      { label: "Industry", value: "Food & Beverage" },
+      { label: "Platform", value: "Admin Panel" },
+      { label: "Restaurants", value: "Multi-Branch" },
+      { label: "Finance", value: "Real-time" },
+    ],
+    features: [
+      "Multi-restaurant dashboard from a single admin login",
+      "Real-time profit, expense & balance tracking",
+      "Wallet system with deposit, withdraw & liability coverage",
+      "Daily income/expense bar & composed charts",
+      "Staff management with roles, salaries & attendance",
+      "Fully customisable income & expense categories",
+      "Financial reports with CSV export",
+      "Purchase & vendor management",
+      "Menu items & gallery per restaurant",
+      "Salary settlement & advance tracking per staff member",
+    ],
+    highlights: [
+      {
+        icon: "📊",
+        title: "Live Financial Dashboard",
+        desc: "Real-time overview of Total Income, Total Expenses, Net Profit, and Available Balance. Profit is calculated as (Income + Deposits) − (Expenses + Withdrawals + Salaries + Advances) with margin percentage.",
+      },
+      {
+        icon: "💳",
+        title: "Wallet & Balance System",
+        desc: "Each restaurant has a wallet with Available Balance, Locked funds, and Effective Balance after liabilities. Owners can Deposit or Withdraw directly and track coverage percentage in real time.",
+      },
+      {
+        icon: "📈",
+        title: "Daily Performance Charts",
+        desc: "Visual bar and composed charts showing daily Income, Expense, and Profit Margin % across any date range. Tracks Avg Daily Income, Avg Daily Expense, and highlights the Best performing day.",
+      },
+      {
+        icon: "🗂️",
+        title: "Category Management",
+        desc: "Fully customisable expense and income categories with subcategory support. Owners can define their own category structure to match how their business tracks purchases, income, and operational costs.",
+      },
+      {
+        icon: "👨‍🍳",
+        title: "Staff & Attendance",
+        desc: "Manage staff with their assigned roles, monthly salary, join date, and contact details. Tracks attendance and handles salary settlements and advance payments per employee.",
+      },
+      {
+        icon: "📋",
+        title: "Financial Reports & Export",
+        desc: "Detailed transaction history with filters for Daily Income, Vendor Reports, Withdrawals, and Deposits. Shows totals for Purchases, Inflows, Expenses, Salaries, Advances, and Unpaid Liabilities. Export to CSV supported.",
+      },
+      {
+        icon: "🍽️",
+        title: "Menu Management",
+        desc: "Add and manage menu items with a Gallery view. Organised per restaurant so Tasty Toast and Lassi Factory each have their own independent menu structure.",
+      },
+      {
+        icon: "🏪",
+        title: "Multi-Restaurant Support",
+        desc: "Admins can switch between multiple restaurant branches from a single login. Each branch has fully isolated data, staff, and financials — making it ideal for growing food businesses.",
+      },
+    ],
+    gallery: [
+      { src: "/ttc-1.png", alt: "Financial Dashboard" },
+      { src: "/ttc/ttc-menu.jpg", alt: "Menu View" },
+      { src: "/ttc/ttc-report.jpg", alt: "Reports" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Bus Book – Fleet Management",
+    slug: "bus-book-fleet-management",
+    category: "Web Application Development",
+    heroImage: "/busbook/bus-1.png",
+    description:
+      "Complete financial tracking system for bus operators with income, expense & maintenance logs.",
+    overview:
+      "A dedicated fleet management and billing system built for bus operators to track daily collections, manage staff, monitor expenses, and view real-time financial health — all from a single owner dashboard. Currently live with real transaction history dating back across months.",
+    liveUrl: "https://busbook.thinkverse.co.in/",
+    stats: [
+      { label: "Income Tracked", value: "Multi-Month" },
+      { label: "Wallet System", value: "Live Balance" },
+      { label: "Industry", value: "Transport" },
+    ],
+    features: [
+      "Owner dashboard with live balance & todays profit",
+      "Bus registration with route, type & commission rate",
+      "Staff management: drivers, conductors, mechanics & more",
+      "3-step daily entry: collection → staff → expenses",
+      "Full transaction history with per-day net profit",
+      "Maintenance expense tracking (separate from regular)",
+      "Wallet with withdraw funds functionality",
+      "Collection sheet for structured daily reconciliation",
+      "Financial summary: income vs expenses vs balance",
+      "Real data across months with Load More pagination",
+    ],
+    highlights: [
+      {
+        icon: "🚌",
+        title: "Bus Management",
+        desc: "Register and manage buses with Registration Number, Name, Route, Type, and Commission rate. Each bus entry supports registration number, nickname, route name, type, and commission rate.",
+      },
+      {
+        icon: "👷",
+        title: "Staff Management",
+        desc: "Manage drivers, conductors, mechanics, cleaners & managers with Employee ID, role, phone, email, and status. All active employees are tracked in real time with their assigned roles and contact details.",
+      },
+      {
+        icon: "📒",
+        title: "Bill Book – Daily Entry",
+        desc: "A 3-step daily entry flow: enter Collection amount → assign Staff Names → log Expenses. Each entry is tied to a specific Bus Number and Transaction Date for accurate per-bus tracking.",
+      },
+      {
+        icon: "💰",
+        title: "Owner Financial Dashboard",
+        desc: "Live snapshot of Current Balance, Today's Net Profit, and quick-access actions: New Entry, Manage Buses, Manage Staff, and View Reports — designed for fast daily use.",
+      },
+      {
+        icon: "📊",
+        title: "Transaction Records",
+        desc: "Full daily transaction history with Net profit per day. Each entry shows net profit or loss per day, giving owners clear insight into profitable and loss-making days across any period.",
+      },
+      {
+        icon: "🔧",
+        title: "Maintenance Tracking",
+        desc: "Separate maintenance expense category tracked independently from regular expenses. Maintenance costs are tracked independently — keeping repair costs visible without mixing them into daily operational costs.",
+      },
+      {
+        icon: "📈",
+        title: "Financial Summary",
+        desc: "At-a-glance totals: Total Income vs Regular Expenses vs Maintenance vs Wallet Balance — all updated in real time.",
+      },
+      {
+        icon: "📋",
+        title: "Collection Sheet",
+        desc: "Dedicated Collection Sheet module for structured recording of conductor collections per trip or day, making reconciliation and commission calculation straightforward for multi-bus operators.",
+      },
+    ],
+    gallery: [
+      { src: "/busbook/bus-2.png", alt: "Main Dashboard" },
+      { src: "/busbook/busbook.png", alt: "Fleet Overview" },
+      { src: "/busbook/busbook2.png", alt: "Fleet Details" },
+    ],
+  },
+
+ 
+{
+    id: 4,
     title: "eMassh – Online Tuition Platform",
     slug: "emassh-online-tuition",
     category: "Website Development",
@@ -153,161 +308,6 @@ export const projectsData = [
 
   {
     id: 5,
-    title: "Bus Book – Fleet Management",
-    slug: "bus-book-fleet-management",
-    category: "Web Application Development",
-    heroImage: "/busbook/bus-1.png",
-    description:
-      "Complete financial tracking system for bus operators with income, expense & maintenance logs.",
-    overview:
-      "A dedicated fleet management and billing system built for bus operators to track daily collections, manage staff, monitor expenses, and view real-time financial health — all from a single owner dashboard. Currently live with real transaction history dating back across months.",
-    liveUrl: "https://busbook.thinkverse.co.in/",
-    stats: [
-      { label: "Income Tracked", value: "Multi-Month" },
-      { label: "Wallet System", value: "Live Balance" },
-      { label: "Industry", value: "Transport" },
-    ],
-    features: [
-      "Owner dashboard with live balance & todays profit",
-      "Bus registration with route, type & commission rate",
-      "Staff management: drivers, conductors, mechanics & more",
-      "3-step daily entry: collection → staff → expenses",
-      "Full transaction history with per-day net profit",
-      "Maintenance expense tracking (separate from regular)",
-      "Wallet with withdraw funds functionality",
-      "Collection sheet for structured daily reconciliation",
-      "Financial summary: income vs expenses vs balance",
-      "Real data across months with Load More pagination",
-    ],
-    highlights: [
-      {
-        icon: "🚌",
-        title: "Bus Management",
-        desc: "Register and manage buses with Registration Number, Name, Route, Type, and Commission rate. Each bus entry supports registration number, nickname, route name, type, and commission rate.",
-      },
-      {
-        icon: "👷",
-        title: "Staff Management",
-        desc: "Manage drivers, conductors, mechanics, cleaners & managers with Employee ID, role, phone, email, and status. All active employees are tracked in real time with their assigned roles and contact details.",
-      },
-      {
-        icon: "📒",
-        title: "Bill Book – Daily Entry",
-        desc: "A 3-step daily entry flow: enter Collection amount → assign Staff Names → log Expenses. Each entry is tied to a specific Bus Number and Transaction Date for accurate per-bus tracking.",
-      },
-      {
-        icon: "💰",
-        title: "Owner Financial Dashboard",
-        desc: "Live snapshot of Current Balance, Today's Net Profit, and quick-access actions: New Entry, Manage Buses, Manage Staff, and View Reports — designed for fast daily use.",
-      },
-      {
-        icon: "📊",
-        title: "Transaction Records",
-        desc: "Full daily transaction history with Net profit per day. Each entry shows net profit or loss per day, giving owners clear insight into profitable and loss-making days across any period.",
-      },
-      {
-        icon: "🔧",
-        title: "Maintenance Tracking",
-        desc: "Separate maintenance expense category tracked independently from regular expenses. Maintenance costs are tracked independently — keeping repair costs visible without mixing them into daily operational costs.",
-      },
-      {
-        icon: "📈",
-        title: "Financial Summary",
-        desc: "At-a-glance totals: Total Income vs Regular Expenses vs Maintenance vs Wallet Balance — all updated in real time.",
-      },
-      {
-        icon: "📋",
-        title: "Collection Sheet",
-        desc: "Dedicated Collection Sheet module for structured recording of conductor collections per trip or day, making reconciliation and commission calculation straightforward for multi-bus operators.",
-      },
-    ],
-    gallery: [
-      { src: "/busbook/bus-2.png", alt: "Main Dashboard" },
-      { src: "/busbook/busbook.png", alt: "Fleet Overview" },
-      { src: "/busbook/busbook2.png", alt: "Fleet Details" },
-    ],
-  },
-
-  {
-    id: 6,
-    title: "Tasty Toast Cafe",
-    slug: "tasty-toast-cafe",
-    category: "Web Application Development",
-    heroImage: "/ttc/ttc.jpg",
-    description:
-      "Modern cafe website with online menu, reservation system, and food gallery.",
-    overview:
-      "A powerful multi-restaurant admin panel built for café and food business owners to manage finances, staff, menu, vendors, and daily operations — all in one clean dashboard. Currently live across two restaurants: Tasty Toast (Mannarkkad) and Lassi Factory (Tirur).",
-    liveUrl: "https://www.tastytoastcafe.in/",
-    stats: [
-      { label: "Industry", value: "Food & Beverage" },
-      { label: "Platform", value: "Admin Panel" },
-      { label: "Restaurants", value: "Multi-Branch" },
-      { label: "Finance", value: "Real-time" },
-    ],
-    features: [
-      "Multi-restaurant dashboard from a single admin login",
-      "Real-time profit, expense & balance tracking",
-      "Wallet system with deposit, withdraw & liability coverage",
-      "Daily income/expense bar & composed charts",
-      "Staff management with roles, salaries & attendance",
-      "Fully customisable income & expense categories",
-      "Financial reports with CSV export",
-      "Purchase & vendor management",
-      "Menu items & gallery per restaurant",
-      "Salary settlement & advance tracking per staff member",
-    ],
-    highlights: [
-      {
-        icon: "📊",
-        title: "Live Financial Dashboard",
-        desc: "Real-time overview of Total Income, Total Expenses, Net Profit, and Available Balance. Profit is calculated as (Income + Deposits) − (Expenses + Withdrawals + Salaries + Advances) with margin percentage.",
-      },
-      {
-        icon: "💳",
-        title: "Wallet & Balance System",
-        desc: "Each restaurant has a wallet with Available Balance, Locked funds, and Effective Balance after liabilities. Owners can Deposit or Withdraw directly and track coverage percentage in real time.",
-      },
-      {
-        icon: "📈",
-        title: "Daily Performance Charts",
-        desc: "Visual bar and composed charts showing daily Income, Expense, and Profit Margin % across any date range. Tracks Avg Daily Income, Avg Daily Expense, and highlights the Best performing day.",
-      },
-      {
-        icon: "🗂️",
-        title: "Category Management",
-        desc: "Fully customisable expense and income categories with subcategory support. Owners can define their own category structure to match how their business tracks purchases, income, and operational costs.",
-      },
-      {
-        icon: "👨‍🍳",
-        title: "Staff & Attendance",
-        desc: "Manage staff with their assigned roles, monthly salary, join date, and contact details. Tracks attendance and handles salary settlements and advance payments per employee.",
-      },
-      {
-        icon: "📋",
-        title: "Financial Reports & Export",
-        desc: "Detailed transaction history with filters for Daily Income, Vendor Reports, Withdrawals, and Deposits. Shows totals for Purchases, Inflows, Expenses, Salaries, Advances, and Unpaid Liabilities. Export to CSV supported.",
-      },
-      {
-        icon: "🍽️",
-        title: "Menu Management",
-        desc: "Add and manage menu items with a Gallery view. Organised per restaurant so Tasty Toast and Lassi Factory each have their own independent menu structure.",
-      },
-      {
-        icon: "🏪",
-        title: "Multi-Restaurant Support",
-        desc: "Admins can switch between multiple restaurant branches from a single login. Each branch has fully isolated data, staff, and financials — making it ideal for growing food businesses.",
-      },
-    ],
-    gallery: [
-      { src: "/ttc-1.png", alt: "Financial Dashboard" },
-      { src: "/ttc/ttc-menu.jpg", alt: "Menu View" },
-      { src: "/ttc/ttc-report.jpg", alt: "Reports" },
-    ],
-  },
-
-  {
-    id: 7,
     title: "Gobelives",
     slug: "gobelives-hotel-booking",
     category: "Ongoing Projects",
@@ -329,7 +329,7 @@ export const projectsData = [
  
 
   {
-    id: 8,                                
+    id: 6,                                
     title: "Skera",
     slug: "skera-municipality-management", // unique, lowercase, kebab-case
     category: "Ongoing Projects",
@@ -396,7 +396,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 9,
+    id: 7,
     title: "Skera Solutions Website",
     slug: "skera-solutions-website",
     category: "Ongoing Projects",
@@ -453,7 +453,7 @@ export const projectsData = [
     ],
   },
     {
-    id: 10,
+    id: 8,
     title: "Redtick QA Services",
     slug: "redtick-qa-website",
     category: "Website Development",
