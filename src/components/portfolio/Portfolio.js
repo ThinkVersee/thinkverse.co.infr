@@ -33,9 +33,8 @@ export default function Portfolio() {
 
                 {/* Portfolio Badge — matches Works/Services pill style */}
                 <div
-                    className={`mb-6 sm:mb-8 lg:mb-10 transition-all duration-1000 delay-100 ${
-                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
-                    }`}
+                    className={`mb-6 sm:mb-8 lg:mb-10 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
+                        }`}
                 >
                     <span className="inline-block py-2 px-5 sm:px-7 bg-white border border-[#e0e0e0] rounded-[40px] text-xs sm:text-[13px] font-semibold uppercase tracking-[2px] text-[#888]">
                         • Portfolio
@@ -59,9 +58,8 @@ export default function Portfolio() {
 
                 {/* Yellow + Emerald accent bars — consistent with Works & Services */}
                 <div
-                    className={`flex gap-1 mb-8 sm:mb-12 lg:mb-14 transition-all duration-1000 delay-300 ${
-                        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-                    }`}
+                    className={`flex gap-1 mb-8 sm:mb-12 lg:mb-14 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                        }`}
                     style={{ transformOrigin: 'left center' }}
                 >
                     <div
@@ -76,9 +74,8 @@ export default function Portfolio() {
 
                 {/* Category Filter Pills */}
                 <div
-                    className={`flex flex-wrap gap-2 sm:gap-2.5 lg:gap-3 mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 delay-400 ${
-                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}
+                    className={`flex flex-wrap gap-2 sm:gap-2.5 lg:gap-3 mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                        }`}
                 >
                     {categories.map((category) => (
                         <button
@@ -101,14 +98,14 @@ export default function Portfolio() {
                 </div>
 
                 {/* Projects Grid */}
-        
-{/* Projects Grid */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-    {filteredProjects.map((project, index) => (
-        <Link
-            href={`/projects/${project.slug}`}
-            key={project.id}
-            className={`
+
+                {/* Projects Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+                    {filteredProjects.map((project, index) => (
+                        <Link
+                            href={`/projects/${project.slug}`}
+                            key={project.id}
+                            className={`
                 group relative bg-white rounded-2xl overflow-hidden
                 shadow-sm border border-gray-100
                 transition-all duration-500
@@ -116,53 +113,53 @@ export default function Portfolio() {
                 flex flex-col cursor-pointer
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
             `}
-            style={{ transitionDelay: `${index * 120 + 400}ms` }}
-        >
-            {/* Project Image */}
-            <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
-                <img
-                    src={project.heroImage}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Category Badge over image */}
-                <span className="absolute top-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-sm text-white text-[10px] font-semibold rounded-full uppercase tracking-wide">
-                    {project.category}
-                </span>
-            </div>
+                            style={{ transitionDelay: `${index * 120 + 400}ms` }}
+                        >
+                            {/* Project Image */}
+                            <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
+                                <img
+                                    src={project.heroImage}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                {/* Category Badge over image */}
+                                <span className="absolute top-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-sm text-white text-[10px] font-semibold rounded-full uppercase tracking-wide">
+                                    {project.category}
+                                </span>
+                            </div>
 
-            {/* Card Info */}
-            <div className="p-5 sm:p-6 flex flex-col gap-2.5">
+                            {/* Card Info */}
+                            <div className="p-5 sm:p-6 flex flex-col gap-2.5">
 
-                {/* Project Title */}
-                <h3
-                    style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 700 }}
-                    className="text-base sm:text-lg lg:text-xl text-gray-900 line-clamp-1"
-                >
-                    {project.title}
-                </h3>
+                                {/* Project Title */}
+                                <h3
+                                    style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 700 }}
+                                    className="text-base sm:text-lg lg:text-xl text-gray-900 line-clamp-1"
+                                >
+                                    {project.title}
+                                </h3>
 
-                {/* Divider */}
-                <div className="h-px bg-gray-100" />
+                                {/* Divider */}
+                                <div className="h-px bg-gray-100" />
 
-                {/* Description */}
-                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed line-clamp-2">
-                    {project.description}
-                </p>
+                                {/* Description */}
+                                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed line-clamp-2">
+                                    {project.description}
+                                </p>
 
-                {/* Footer Row */}
-                <div className="flex items-center justify-between pt-1">
-                    <span className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">
-                        View Project
-                    </span>
-                    <div className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#10B981] text-[#10B981] transition-all duration-300 group-hover:bg-[#10B981] group-hover:text-white group-hover:translate-x-1">
-                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    </div>
+                                {/* Footer Row */}
+                                <div className="flex items-center justify-between pt-1">
+                                    <span className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">
+                                        View Project
+                                    </span>
+                                    <div className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#10B981] text-[#10B981] transition-all duration-300 group-hover:bg-[#10B981] group-hover:text-white group-hover:translate-x-1">
+                                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
-            </div>
-        </Link>
-    ))}
-</div>
 
 
             </div>

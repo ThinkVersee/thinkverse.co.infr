@@ -1,19 +1,19 @@
 // src/app/page.js
- 
-import Portfolio from "@/components/portfolio/Portfolio";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Portfolio from "@/components/portfolio/Portfolio";
 
-export default function Portfolios() {
+export default function PortfolioPage() {
   return (
     <>
-    <Navbar />
-  
-      <Portfolio />
-    
-         <Footer />
+      <Navbar />
 
-       
+      <Portfolio />
+
+      <Footer />
+
+
     </>
   );
 }
