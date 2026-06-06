@@ -78,7 +78,7 @@ export const projectsData = [
     title: "Tasty Toast Cafe",
     slug: "tasty-toast-cafe",
     category: "Web Application Development",
-    heroImage: "/ttc/ttc.jpg",
+    heroImage: "/ttc/WhatsApp Image 2026-03-01 at 11.36.25.jpeg",
     description:
       "Modern cafe website with online menu, reservation system, and food gallery.",
     overview:
@@ -145,9 +145,12 @@ export const projectsData = [
       },
     ],
     gallery: [
-      { src: "/ttc-1.png", alt: "Financial Dashboard" },
-      { src: "/ttc/ttc-menu.jpg", alt: "Menu View" },
-      { src: "/ttc/ttc-report.jpg", alt: "Reports" },
+      { src: "/ttc/WhatsApp Image 2026-03-01 at 11.36.25.jpeg", alt: "Tasty Toast Cafe screen 1" },
+      { src: "/ttc/WhatsApp Image 2026-03-01 at 11.36.25 (1).jpeg", alt: "Tasty Toast Cafe screen 2" },
+      { src: "/ttc/WhatsApp Image 2026-03-01 at 11.36.26.jpeg", alt: "Tasty Toast Cafe screen 3" },
+      { src: "/ttc/WhatsApp Image 2026-03-01 at 11.36.26 (1).jpeg", alt: "Tasty Toast Cafe screen 4" },
+      { src: "/ttc/WhatsApp Image 2026-03-01 at 11.36.26 (2).jpeg", alt: "Tasty Toast Cafe screen 5" },
+      { src: "/ttc/WhatsApp Image 2026-03-01 at 11.36.27.jpeg", alt: "Tasty Toast Cafe screen 6" },
     ],
   },
   {
@@ -232,7 +235,7 @@ export const projectsData = [
     id: 4,
     title: "eMassh – Online Tuition Platform",
     slug: "emassh-online-tuition",
-    category: "Website Development",
+    category: "Web Application Development",
     heroImage: "/emash/emassh-1.png",
     description:
       "Live online tuition connecting students with expert tutors, structured notes, and personalized learning paths.",
@@ -300,9 +303,9 @@ export const projectsData = [
       },
     ],
     gallery: [
-      { src: "/emassh-1.png", alt: "Main Dashboard" },
-      { src: "/emassh-2.png", alt: "Classes View" },
-      { src: "/emassh-3.png", alt: "Analytics" },
+      { src: "/emash/emassh-1.png", alt: "Main Dashboard" },
+      { src: "/emash/emassh-2.png", alt: "Classes View" },
+      { src: "/emash/emassh-3.png", alt: "Analytics" },
     ],
   },
 
@@ -310,8 +313,8 @@ export const projectsData = [
     id: 5,
     title: "Gobelives",
     slug: "gobelives-hotel-booking",
-    category: "Ongoing Projects",
-    heroImage: "/gobelives/gobelives.jpg",
+    category: "Web Application Development",
+    heroImage: "/gobelives/Screenshot 2026-06-06 at 9.17.36 PM.png",
     description:
       "In-progress web platform for hotel booking, resort reservations, room management, guest profiles, dynamic pricing, availability calendar, and real-time analytics.",
     overview: "Hotel & resort booking platform (under development)",
@@ -324,7 +327,13 @@ export const projectsData = [
       "Guest profiles & booking history",
       "Admin dashboard with analytics",
     ],
-    gallery: [],
+    gallery: [
+      { src: "/gobelives/Screenshot 2026-06-06 at 9.17.36 PM.png", alt: "Gobelives screen 1" },
+      { src: "/gobelives/Screenshot 2026-06-06 at 9.17.46 PM.png", alt: "Gobelives screen 2" },
+      { src: "/gobelives/Screenshot 2026-06-06 at 9.18.05 PM.png", alt: "Gobelives screen 3" },
+      { src: "/gobelives/Screenshot 2026-06-06 at 9.19.41 PM.png", alt: "Gobelives screen 4" },
+      { src: "/gobelives/Screenshot 2026-06-06 at 9.19.58 PM.png", alt: "Gobelives screen 5" },
+    ],
   },
  
 
@@ -332,8 +341,8 @@ export const projectsData = [
     id: 6,                                
     title: "Skera",
     slug: "skera-municipality-management", // unique, lowercase, kebab-case
-    category: "Ongoing Projects",
-    heroImage: "/skera/skera.png", // put one main screenshot in /public/skera/
+    category: "Website Development",
+    heroImage: "/skera/Dashboard.png", // put one main screenshot in /public/skera/
     description:
       "A modern admin dashboard for municipality management, allowing officials to track public issues, manage municipalities, handle staff/users, and monitor status in real-time.",
     overview:
@@ -385,22 +394,21 @@ export const projectsData = [
       },
     ],
     gallery: [
-      { src: "/skera/skera-dashboard.png", alt: "Main Dashboard with stats and charts" },
-      { src: "/skera/skera-issues-list.png", alt: "Issues listing and filtering" },
-      { src: "/skera/skera-issue-detail.png", alt: "Detailed issue view with status update" },
-      { src: "/skera/skera-add-issue.png", alt: "Add new issue form" },
-      { src: "/skera/skera-municipalities.png", alt: "Municipalities management table" },
-      { src: "/skera/skera-add-municipality.png", alt: "Add municipality form" },
-      { src: "/skera/skera-users.png", alt: "Users / Staff list" },
-      { src: "/skera/skera-add-user.png", alt: "Add staff/user form" },
+      { src: "/skera/Dashboard.png", alt: "Main Dashboard with stats and charts" },
+      { src: "/skera/Issues.png", alt: "Issues listing and filtering" },
+      { src: "/skera/Issues (1).png", alt: "Detailed issue view with status update" },
+      { src: "/skera/Add Issue.png", alt: "Add new issue form" },
+      { src: "/skera/Add Municipality.png", alt: "Add municipality form" },
+      { src: "/skera/Add User.png", alt: "Add staff user form" },
+      { src: "/skera/skera.png", alt: "Skera app preview" },
     ],
   },
   {
     id: 7,
     title: "Skera Solutions Website",
     slug: "skera-solutions-website",
-    category: "Ongoing Projects",
-    heroImage: "/skera/skera-1.png",  
+    category: "Web Application Development",
+    heroImage: "/skerasolutinos/Instagram Post 6.png",  
     description:
       "Professional company website for Skera Solutions, highlighting end-to-end public lighting services, smart monitoring, AMC contracts, and director expertise.",
     overview:
@@ -445,11 +453,13 @@ export const projectsData = [
 
     ],
     gallery: [
-      { src: "/skera-website/skera-hero.png", alt: "Hero section with tagline" },
-      { src: "/skera-website/skera-about.png", alt: "About / Who We Are section" },
-      { src: "/skera-website/skera-directors.png", alt: "Directors profiles" },
-      { src: "/skera-website/skera-services.png", alt: "Services and lighting systems" },
-      { src: "/skera-website/skera-contact.png", alt: "Contact details" },
+      { src: "/skerasolutinos/Instagram Post 6.png", alt: "Skera Solutions screen 1" },
+      { src: "/skerasolutinos/Instagram Post 7.png", alt: "Skera Solutions screen 2" },
+      { src: "/skerasolutinos/Instagram Post 8.png", alt: "Skera Solutions screen 3" },
+      { src: "/skerasolutinos/Instagram Post 9.png", alt: "Skera Solutions screen 4" },
+      { src: "/skerasolutinos/Instagram Post 10.png", alt: "Skera Solutions screen 5" },
+      { src: "/skerasolutinos/Instagram Post 11.png", alt: "Skera Solutions screen 6" },
+      { src: "/skerasolutinos/Instagram Post 12.png", alt: "Skera Solutions screen 7" },
     ],
   },
     {
@@ -457,7 +467,7 @@ export const projectsData = [
     title: "Redtick QA Services",
     slug: "redtick-qa-website",
     category: "Website Development",
-    heroImage: "/redtick-1.png",  // Upload main hero screenshot here
+    heroImage: "/redtick/Instagram Post 6 (1).png",
     description:
       "Professional corporate website for Redtick QA Services, offering independent audit, inspection, quality assurance, and compliance support for certification bodies, manufacturers, and organizations across multiple industries.",
     overview:
@@ -503,12 +513,9 @@ export const projectsData = [
       },
     ],
     gallery: [
-      { src: "/redtick/redtick-hero.png", alt: "Hero section with tagline 'Independent Audit & Quality Assurance Services You Can Trust'" },
-      { src: "/redtick/redtick-services.png", alt: "Our Services section listing audit types and descriptions" },
-      { src: "/redtick/redtick-industries.png", alt: "Industries We Serve grid with manufacturing, food, pharma, etc." },
-      { src: "/redtick/redtick-why-choose.png", alt: "Why Choose Redtick section on structured approach" },
-      { src: "/redtick/redtick-audit-process.png", alt: "Audit Approach steps: Plan, Conduct, Report & Support" },
-      { src: "/redtick/redtick-contact.png", alt: "Let's Work Together contact and consultation section" },
+      { src: "/redtick/Instagram Post 6 (1).png", alt: "Redtick QA screen 1" },
+      { src: "/redtick/Instagram Post 7 (1).png", alt: "Redtick QA screen 2" },
+      { src: "/redtick/Instagram Post 11 (1).png", alt: "Redtick QA screen 3" },
     ],
   },
 ];
