@@ -58,12 +58,12 @@ export default function About() {
             }}
           >
             <p>
-              Thinkverse is a creative IT service company focused on building modern digital
-              experiences through design, technology, and strategy.
+              ThinkVerse is a modern digital studio focused on automation, custom platforms,
+              and thoughtful product experiences for growing businesses.
               <br className="hidden sm:block" />
               <span className="sm:hidden"> </span>
-              We don't just deliver projects — we collaborate, think deeply, and build products
-              that make an impact.
+              We don't just deliver projects — we collaborate closely, solve operational
+              problems, and build systems that create measurable impact.
             </p>
           </div>
 

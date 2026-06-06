@@ -12,19 +12,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "ThinkVerse – Software Development & Digital Solutions",
+  title: "ThinkVerse – Automation, Web Applications & Smart Digital Systems",
   description:
-    "ThinkVerse is a software company offering custom development, SaaS products, IT consulting, and digital solutions to help businesses scale.",
+    "ThinkVerse helps businesses grow with automation, customer support systems, high-performing websites, and smart web applications built for scale.",
   keywords: [
-    "software company",
-    "custom software development",
-    "IT services",
-    "web development",
-    "mobile app development",
-    "SaaS products",
-    "digital solutions",
+    "automation company",
+    "customer support systems",
+    "workflow automation",
+    "web application development",
+    "website development",
+    "workflow automation",
+    "business automation",
+    "smart web systems",
     "ThinkVerse",
-    "technology consulting",
+    "digital systems",
   ],
   icons: {
     icon: [

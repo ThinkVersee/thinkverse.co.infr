@@ -1,6 +1,42 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Award,
+  BookOpen,
+  BriefcaseBusiness,
+  Building2,
+  Bus,
+  CalendarDays,
+  Camera,
+  ChartColumn,
+  ChefHat,
+  CirclePlus,
+  Clapperboard,
+  ClipboardList,
+  CreditCard,
+  ExternalLink,
+  Film,
+  Handshake,
+  HardHat,
+  LayoutDashboard,
+  Lightbulb,
+  Link2,
+  ListChecks,
+  Mail,
+  MessageCircle,
+  Monitor,
+  Search,
+  Settings,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
+  Trophy,
+  UserRound,
+  Users,
+  Wrench,
+} from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
@@ -14,6 +50,47 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 // ────────────────────────────────────────────────
+
+const highlightIconMap = {
+  "🎬": Clapperboard,
+  "📱": Smartphone,
+  "🔍": Search,
+  "✅": ShieldCheck,
+  "💬": MessageCircle,
+  "👤": UserRound,
+  "📊": LayoutDashboard,
+  "💳": CreditCard,
+  "📈": ChartColumn,
+  "🗂️": ClipboardList,
+  "👨‍🍳": ChefHat,
+  "📋": ListChecks,
+  "🍽️": ChefHat,
+  "🏪": Building2,
+  "🚌": Bus,
+  "👷": HardHat,
+  "📒": BookOpen,
+  "💰": BriefcaseBusiness,
+  "🔧": Wrench,
+  "🎥": Film,
+  "📚": BookOpen,
+  "🧠": Sparkles,
+  "🏆": Trophy,
+  "👩‍🏫": Users,
+  "🤝": Handshake,
+  "📅": CalendarDays,
+  "🛠️": Wrench,
+  "🏢": Building2,
+  "👥": Users,
+  "➕": CirclePlus,
+  "💡": Lightbulb,
+  "🔗": Link2,
+  "🛡️": ShieldCheck,
+  "🏭": Settings,
+  "💍": Sparkles,
+  "📸": Camera,
+  "🖥️": Monitor,
+  "📩": Mail,
+};
 
 export default function ProjectDetail({ slug }) {
   const project = projectsData.find((p) => p.slug === slug);
@@ -36,6 +113,11 @@ export default function ProjectDetail({ slug }) {
   const isDevelopmentProject =
     project.category === 'Web Application Development' ||
     project.category === 'Website Development';
+
+  const renderHighlightIcon = (icon) => {
+    const IconComponent = highlightIconMap[icon] || Award;
+    return <IconComponent className="w-6 h-6 text-gray-900" strokeWidth={1.8} />;
+  };
 
   const {
     title,
@@ -208,7 +290,9 @@ export default function ProjectDetail({ slug }) {
                   key={i}
                   className="bg-[#fafafa] border border-gray-100 rounded-2xl p-5 sm:p-6 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="text-2xl mb-3">{h.icon}</div>
+                  <div className="w-11 h-11 rounded-2xl bg-white border border-gray-200 flex items-center justify-center mb-3 shadow-sm">
+                    {renderHighlightIcon(h.icon)}
+                  </div>
                   <h3 className="text-sm font-bold text-gray-900 mb-1.5 tracking-tight">
                     {h.title}
                   </h3>

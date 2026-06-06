@@ -23,13 +23,13 @@ export default function ThinkVerseHero() {
             style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 500 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] leading-tight text-white"
           >
-            Think Beyond the Interface
+            Think Beyond Automation
           </h1>
           <p
             style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 500 }}
             className="mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] leading-tight text-emerald-400"
           >
-            We design &amp; build digital products that live in the future.
+            We build smarter systems for modern businesses.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function ThinkVerseHero() {
               style={{ fontFamily: 'Halenoir, sans-serif', fontWeight: 400 }}
               className="text-base md:text-lg xl:text-xl leading-[1.6] text-gray-300 max-w-sm lg:max-w-none"
             >
-              Thinkverse is a design-driven digital studio focused on creating meaningful, scalable, and high-performing digital experiences.
+              ThinkVerse helps businesses launch automation, customer support tools, and high-performing digital products with a sharp focus on clarity, speed, and real-world results.
             </p>
 
             {/* CTA Button */}

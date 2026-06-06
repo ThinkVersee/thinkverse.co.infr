@@ -53,7 +53,7 @@ export default function Portfolio() {
                         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
                     `}
                 >
-                    Showcasing thoughtfully crafted digital solutions that blend creativity, innovation, and real-world impact
+                    Showcasing thoughtful products, automations, and modern business systems built for real-world impact
                 </h2>
 
                 {/* Yellow + Emerald accent bars — consistent with Works & Services */}

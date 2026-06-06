@@ -7,7 +7,7 @@ import { projectsData } from '@/data/projectsData';
 
 const Works = () => {
     const router = useRouter();
-    const worksProjects = projectsData.slice(0, 3);
+    const worksProjects = projectsData.slice(0, 6);
 
     const Card = ({ project }) => {
         const handleClick = () => {
@@ -62,7 +62,7 @@ const Works = () => {
                     </div>
 
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] font-medium text-[#1a1a1a] leading-[1.2] mb-8 sm:mb-10 lg:mb-12 mx-auto max-w-xs sm:max-w-md lg:max-w-[700px]">
-                        Showcasing thoughtfully crafted digital solutions
+                        Showcasing thoughtful products, automations, and digital systems with real business impact
                     </h1>
 
                     {/* Multi-color Underline */}

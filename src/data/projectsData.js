@@ -462,7 +462,7 @@ export const projectsData = [
       { src: "/skerasolutinos/Instagram Post 12.png", alt: "Skera Solutions screen 7" },
     ],
   },
-    {
+  {
     id: 8,
     title: "Redtick QA Services",
     slug: "redtick-qa-website",
@@ -516,6 +516,66 @@ export const projectsData = [
       { src: "/redtick/Instagram Post 6 (1).png", alt: "Redtick QA screen 1" },
       { src: "/redtick/Instagram Post 7 (1).png", alt: "Redtick QA screen 2" },
       { src: "/redtick/Instagram Post 11 (1).png", alt: "Redtick QA screen 3" },
+    ],
+  },
+  {
+    id: 9,
+    title: "Lume Weddings Australia",
+    slug: "lume-weddings-australia",
+    category: "Website Development",
+    heroImage: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.05.jpeg",
+    description:
+      "Elegant wedding photography and storytelling website crafted to showcase cinematic moments, signature galleries, and lead-generating inquiry flows for an Australian wedding brand.",
+    overview:
+      "Lume Weddings Australia is a premium portfolio website designed for a modern wedding photography and visual storytelling brand. The site focuses on emotional presentation, clean luxury aesthetics, curated galleries, service clarity, and smooth inquiry paths that help couples discover the brand, explore past celebrations, and confidently get in touch.",
+    liveUrl: "https://lumeweddings.au/",
+    stats: [
+      { label: "Industry", value: "Weddings" },
+      { label: "Market", value: "Australia" },
+      { label: "Platform", value: "Brand Website" },
+      { label: "Goal", value: "Leads & Showcase" },
+    ],
+    features: [
+      "Luxury wedding brand presentation with clean, elegant visual hierarchy",
+      "Curated gallery sections to highlight signature wedding moments and storytelling",
+      "Service-focused pages for couples exploring photography and wedding coverage",
+      "Lead generation through clear contact and inquiry call-to-actions",
+      "Responsive layout optimised for both mobile browsing and desktop viewing",
+      "Editorial-style imagery blocks that keep the focus on emotion and atmosphere",
+      "Trust-building sections to communicate style, experience, and professionalism",
+      "Smooth navigation structure for discovering portfolio, services, and contact details",
+      "Brand-consistent typography and layout tailored for a premium wedding audience",
+      "Visually immersive website experience built to increase engagement and enquiries",
+    ],
+    highlights: [
+      {
+        icon: "💍",
+        title: "Premium Wedding Branding",
+        desc: "The site is positioned like a modern luxury wedding brand, using elegant layouts and refined spacing to create a polished first impression for couples.",
+      },
+      {
+        icon: "📸",
+        title: "Story-Driven Portfolio",
+        desc: "Photography is presented as a curated narrative rather than a simple gallery, helping visitors experience the emotion, style, and tone of real wedding moments.",
+      },
+      {
+        icon: "🖥️",
+        title: "Responsive Showcase Experience",
+        desc: "Built to feel immersive across devices, the layout adapts smoothly for mobile and desktop so couples can browse galleries and services comfortably anywhere.",
+      },
+      {
+        icon: "📩",
+        title: "Inquiry-Focused Journey",
+        desc: "Clear sections and calls to action guide visitors from inspiration to contact, turning interest into qualified wedding inquiries more effectively.",
+      },
+    ],
+    gallery: [
+      { src: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.05.jpeg", alt: "Lume Weddings screen 1" },
+      { src: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.05 (1).jpeg", alt: "Lume Weddings screen 2" },
+      { src: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.06.jpeg", alt: "Lume Weddings screen 3" },
+      { src: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.06 (1).jpeg", alt: "Lume Weddings screen 4" },
+      { src: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.06 (2).jpeg", alt: "Lume Weddings screen 5" },
+      { src: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.06 (3).jpeg", alt: "Lume Weddings screen 6" },
     ],
   },
 ];

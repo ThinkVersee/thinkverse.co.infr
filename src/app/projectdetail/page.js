@@ -18,5 +18,5 @@ export default function WorksPage() {
 
 export const metadata = {
   title: "Our Works | ThinkVerse",
-  description: "Explore our portfolio of innovative web applications, websites, and digital solutions.",
+  description: "Explore our portfolio of web applications, websites, automation systems, and customer-focused digital products.",
 };

@@ -4,18 +4,33 @@ import { useState, useEffect, useRef } from 'react';
 const services = [
   {
     title: 'UI/UX Design',
-    text: 'We design intuitive and engaging interfaces by deeply understanding users and business goals. From wireframes to high-fidelity UI, every decision is made with purpose.',
+    text: 'We design intuitive interfaces that feel clear, trustworthy, and easy to use. From product flows to dashboard UX, every decision is shaped around clarity and user confidence.',
     icon: 'uiux',
   },
   {
     title: 'Website Development',
-    text: 'We design intuitive and engaging interfaces by deeply understanding users and business goals. From wireframes to high-fidelity UI, every decision is made with purpose.',
+    text: 'We build fast, responsive websites tailored to your brand, goals, and audience. Every page is crafted to communicate value clearly and convert visitors into customers.',
     icon: 'website',
   },
   {
-    title: 'We design intuitive and engaging interfaces by deeply understanding users and business goals.',
-    text: 'We design intuitive and engaging interfaces by deeply understanding users and business goals. From wireframes to high-fidelity UI, every decision is made with purpose.',
+    title: 'Web Application Development',
+    text: 'We develop custom web applications with clean architecture, intuitive workflows, and dependable performance. From dashboards to business platforms, we build systems that solve real operational problems.',
     icon: 'webapp',
+  },
+  {
+    title: 'AI Solutions',
+    text: 'We help businesses integrate practical AI into their products and workflows, from smart assistants to content systems and intelligent business tools that improve speed, accuracy, and decision-making.',
+    icon: 'ai',
+  },
+  {
+    title: 'AI Automation',
+    text: 'We automate repetitive business tasks using AI-powered workflows for lead handling, internal operations, follow-ups, reporting, and data processing so your team can focus on higher-value work.',
+    icon: 'automation',
+  },
+  {
+    title: 'AI Customer Service',
+    text: 'We create AI-driven customer support experiences including chat assistants, FAQ systems, response automation, and conversational flows that help businesses support customers 24/7 with consistency.',
+    icon: 'support',
   },
 ];
 
@@ -55,6 +70,43 @@ export default function Services() {
             <rect x="7" y="9" width="18" height="16" rx="3" />
             <path d="M11 16L9 18L11 20" />
             <path d="M17 16L19 18L17 20" />
+          </svg>
+        );
+      case 'ai':
+        return (
+          <svg className="w-6 h-6 sm:w-7 sm:h-7 text-teal-500" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="6" y="7" width="16" height="14" rx="4" />
+            <path d="M14 3v4" />
+            <path d="M10 21v4" />
+            <path d="M18 21v4" />
+            <path d="M3 14h3" />
+            <path d="M22 14h3" />
+            <circle cx="11" cy="13" r="1" fill="currentColor" />
+            <circle cx="17" cy="13" r="1" fill="currentColor" />
+            <path d="M11 17c1 .8 2 .8 3 .8s2 0 3-.8" />
+          </svg>
+        );
+      case 'automation':
+        return (
+          <svg className="w-6 h-6 sm:w-7 sm:h-7 text-teal-500" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="14" cy="14" r="4" />
+            <path d="M14 3v3" />
+            <path d="M14 22v3" />
+            <path d="M3 14h3" />
+            <path d="M22 14h3" />
+            <path d="M6.5 6.5l2.2 2.2" />
+            <path d="M19.3 19.3l2.2 2.2" />
+            <path d="M21.5 6.5l-2.2 2.2" />
+            <path d="M8.7 19.3l-2.2 2.2" />
+          </svg>
+        );
+      case 'support':
+        return (
+          <svg className="w-6 h-6 sm:w-7 sm:h-7 text-teal-500" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 12a8 8 0 0 1 16 0v5a3 3 0 0 1-3 3h-2" />
+            <rect x="3" y="13" width="4" height="7" rx="2" />
+            <rect x="21" y="13" width="4" height="7" rx="2" />
+            <path d="M14 21v2a2 2 0 0 1-2 2h-2" />
           </svg>
         );
       default:
@@ -105,7 +157,7 @@ export default function Services() {
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
           `}
         >
-          We design intuitive and engaging interfaces
+          Digital services built for automation, growth, and better customer experiences
         </h2>
 
         {/* Gradient Underline */}

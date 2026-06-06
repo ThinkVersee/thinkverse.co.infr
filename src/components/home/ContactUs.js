@@ -59,10 +59,10 @@ export default function ContactUs() {
         {/* Header */}
         <div className={`text-center mb-10 sm:mb-12 lg:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 text-gray-900 leading-tight">
-            Let's Build Something Amazing
+            Let's Build Something Useful
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed px-2 sm:px-4">
-            Ready to turn your vision into reality? Drop us a message and our team will get back to you within 24 hours.
+            Ready to launch automation, improve customer support, or build a stronger digital product? Drop us a message and our team will get back to you within 24 hours.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function ContactUs() {
               Send us a message
             </h3>
             <p className="text-gray-500 mb-6 sm:mb-8 text-sm sm:text-base">
-              Fill out the form below and we'll be in touch soon.
+              Tell us what you want to build, improve, or automate and we&apos;ll be in touch soon.
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col flex-1 space-y-4 sm:space-y-5 lg:space-y-6">
