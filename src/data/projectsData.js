@@ -316,16 +316,50 @@ export const projectsData = [
     category: "Web Application Development",
     heroImage: "/gobelives/Screenshot 2026-06-06 at 9.17.36 PM.png",
     description:
-      "In-progress web platform for hotel booking, resort reservations, room management, guest profiles, dynamic pricing, availability calendar, and real-time analytics.",
-    overview: "Hotel & resort booking platform (under development)",
+      "In-progress hospitality platform for hotel booking, resort reservations, room management, guest profiles, dynamic pricing, availability tracking, and operational insights.",
+    overview:
+      "Gobelives is a hospitality booking platform designed to simplify how hotels and resorts manage reservations, room inventory, guest experiences, pricing, and reporting from one connected system. The product focuses on giving property owners a clearer operational view while making the booking journey smoother for guests.",
     isOngoing: true,
     comingSoon: true,
+    stats: [
+      { label: "Industry", value: "Hospitality" },
+      { label: "Platform", value: "Web App" },
+      { label: "Focus", value: "Bookings + Operations" },
+      { label: "Status", value: "In Progress" },
+    ],
     features: [
-      "Room & suite management",
-      "Dynamic pricing engine",
-      "Real-time availability calendar",
-      "Guest profiles & booking history",
-      "Admin dashboard with analytics",
+      "Room and suite management with organised inventory control",
+      "Booking workflow for hotels, resorts, and property-based stays",
+      "Dynamic pricing logic based on demand and availability",
+      "Real-time availability calendar for room planning",
+      "Guest profiles with booking history and reservation details",
+      "Property management dashboard for operational visibility",
+      "Reservation tracking with status-based booking management",
+      "Analytics and reporting tools for occupancy and performance insights",
+      "Clean admin experience for handling hospitality operations",
+      "Scalable platform structure for growing accommodation businesses",
+    ],
+    highlights: [
+      {
+        icon: "📅",
+        title: "Live Booking Management",
+        desc: "The platform helps hospitality teams manage reservations in a structured way, keeping room bookings, guest details, and reservation status easier to track in real time.",
+      },
+      {
+        icon: "🏨",
+        title: "Room & Property Control",
+        desc: "Properties can organise rooms, suites, and availability from a central dashboard, making it easier to manage inventory across different stay types and occupancy plans.",
+      },
+      {
+        icon: "📈",
+        title: "Pricing & Performance Visibility",
+        desc: "Dynamic pricing and analytics are designed to help owners understand booking trends, occupancy, and operational performance more clearly.",
+      },
+      {
+        icon: "👥",
+        title: "Guest-Centric Experience",
+        desc: "Guest profiles and reservation history create a smoother experience for returning visitors while giving teams better context for service and support.",
+      },
     ],
     gallery: [
       { src: "/gobelives/Screenshot 2026-06-06 at 9.17.36 PM.png", alt: "Gobelives screen 1" },
