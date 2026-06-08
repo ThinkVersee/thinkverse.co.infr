@@ -3,21 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 
 const services = [
   {
-    title: 'UI/UX Design',
-    text: 'We design intuitive interfaces that feel clear, trustworthy, and easy to use. From product flows to dashboard UX, every decision is shaped around clarity and user confidence.',
-    icon: 'uiux',
-  },
-  {
-    title: 'Website Development',
-    text: 'We build fast, responsive websites tailored to your brand, goals, and audience. Every page is crafted to communicate value clearly and convert visitors into customers.',
-    icon: 'website',
-  },
-  {
-    title: 'Web Application Development',
-    text: 'We develop custom web applications with clean architecture, intuitive workflows, and dependable performance. From dashboards to business platforms, we build systems that solve real operational problems.',
-    icon: 'webapp',
-  },
-  {
     title: 'AI Solutions',
     text: 'We help businesses integrate practical AI into their products and workflows, from smart assistants to content systems and intelligent business tools that improve speed, accuracy, and decision-making.',
     icon: 'ai',
@@ -31,6 +16,21 @@ const services = [
     title: 'AI Customer Service',
     text: 'We create AI-driven customer support experiences including chat assistants, FAQ systems, response automation, and conversational flows that help businesses support customers 24/7 with consistency.',
     icon: 'support',
+  },
+  {
+    title: 'UI/UX Design',
+    text: 'We design intuitive interfaces that feel clear, trustworthy, and easy to use. From product flows to dashboard UX, every decision is shaped around clarity and user confidence.',
+    icon: 'uiux',
+  },
+  {
+    title: 'Website Development',
+    text: 'We build fast, responsive websites tailored to your brand, goals, and audience. Every page is crafted to communicate value clearly and convert visitors into customers.',
+    icon: 'website',
+  },
+  {
+    title: 'Web Application Development',
+    text: 'We develop custom web applications with clean architecture, intuitive workflows, and dependable performance. From dashboards to business platforms, we build systems that solve real operational problems.',
+    icon: 'webapp',
   },
 ];
 
