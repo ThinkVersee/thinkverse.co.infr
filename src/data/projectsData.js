@@ -1,6 +1,6 @@
 // data/projectsData.js
 
-export const projectsData = [
+const baseProjectsData = [
   {
     id: 1,
     title: "Cinema Casting Company",
@@ -612,6 +612,24 @@ export const projectsData = [
       { src: "/lumeweddings/WhatsApp Image 2026-04-11 at 20.49.06 (3).jpeg", alt: "Lume Weddings screen 6" },
     ],
   },
+];
+
+const featuredProjectOrder = [
+  "Skera Solutions Website",
+  "Redtick QA Services",
+  "Lume Weddings Australia",
+];
+
+export const projectsData = [
+  ...baseProjectsData
+    .filter((project) => featuredProjectOrder.includes(project.title))
+    .sort(
+      (a, b) =>
+        featuredProjectOrder.indexOf(a.title) - featuredProjectOrder.indexOf(b.title)
+    ),
+  ...baseProjectsData.filter(
+    (project) => !featuredProjectOrder.includes(project.title)
+  ),
 ];
 
 export const categories = [
